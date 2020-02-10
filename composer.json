@@ -1,0 +1,10 @@
+{   
+    "name": "info/web",
+    "description": "Projet_BNB",
+    "require": {
+        "michelf/php-markdown": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {"Feat\\" : "App"}
+    }
+}
