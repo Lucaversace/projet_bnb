@@ -1,0 +1,9 @@
+#AuthName "Page d'administration protégée"
+#AuthType Basic
+#AuthGroupFile /dev/null 
+#AuthUserFile "/Applications/MAMP/htdocs/projet_bnb/.htpasswd"
+#Require valid-user 
+#DirectoryIndex index.php /erreurs/403.php
+
+
+
