@@ -1,10 +1,8 @@
 <?php
-
 require_once "app/layout/header.php";
 require_once "app/layout/footer.php";
 $title = "Déposer une annonce";
 ?>
-
 <?php ob_start();?>
 
 <h1>Déposer une annonce</h1>
@@ -15,5 +13,5 @@ $title = "Déposer une annonce";
 <?php $content = ob_get_clean();?>
 
 <?php 
-require_once("template.php");
+require_once("app/views/template.php");
 ?>

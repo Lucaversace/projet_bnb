@@ -29,8 +29,16 @@ class adresseDao{
         $lat = $adresse->lat;
 
         $query = 
-        "INSERT INTO `adresse` ( `ville`, `code_postale`, `num_rue`, `nom_rue`, `lon`, `lat`) VALUES (:ville, :codePostale, :numRue, :nomRue, :lon, :lat)";
+        "INSERT INTO `adresse` ( `ville`, `code_postale`, `num_rue`, `nom_rue`, `lon`, `lat`) 
+        VALUES (:ville, :codePostale, :numRue, :nomRue, :lon, :lat)";
+
         $stmt = $db_connection->prepare($query);
-        $stmt->execute([':ville' => $ville, ':codePostale' => $codePostale, ':num_rue' => $numRue, ':nom_rue' => $nomRue, ':lon' => $lon, ':lat' => $lat]);
+        $stmt->execute([
+            ':ville' => $ville,
+            ':codePostale' => $codePostale,
+            ':num_rue' => $numRue,
+            ':nom_rue' => $nomRue,
+            ':lon' => $lon,
+            ':lat' => $lat]);
     }
 }

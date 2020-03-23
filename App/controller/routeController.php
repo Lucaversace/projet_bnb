@@ -11,7 +11,7 @@ class RouteController extends Controller
 
     public function get_deposit()
     {
-        $this->view('deposit');
+        $this->view('membre/deposit');
     }
 
     public function get_registration()
