@@ -1,32 +1,32 @@
 <?php
+$sep = DIRECTORY_SEPARATOR;
 
-require "controller/controller.php";
-$param_url = $_GET['action'];
+define('VIEWS', dirname(__DIR__). $sep . 'projet_bnb'. $sep . 'app' . $sep . 'views/');
+require_once "app/controller/routeController.php";
 
-if(isset($param_url)){
-   switch ($param_url) {
-      case '':
-         get_home();
-         break;
-      case 'home':
-            get_home();
-            break;
-      case 'deposit':
-            get_deposit();
-            break;
-      case 'registration':
-            get_registration();
-            break;
-      case 'help':   
-            get_help();
-            break;
-      default:
-            echo "Cette page n'éxiste pas.";
 
-  }
+$routing = new routeController();
 
+switch ($_SERVER['REQUEST_URI']) {
+    case '/projet_bnb/':
+        $routing->get_home('home');
+        break;
+    case '/projet_bnb/index.php?action=home':
+        $routing->get_home('home');
+        break;
+    case '/projet_bnb/index.php?action=deposit':
+        $routing->get_deposit();
+        break;
+    case '/projet_bnb/index.php?action=registration':
+        $routing->get_registration();
+        break;
+    case '/projet_bnb/index.php?action=login':   
+        $routing->get_login();
+        break;
+    case '/projet_bnb/index.php?action=help':   
+        $routing->get_help();
+        break;
+    default:
+        header('HTTP/1.0 404 Not Found');
 }
-else{
-   get_home();
-}
-   
+

@@ -1,13 +1,13 @@
 <?php
 
-require_once "layout/header.php";
-require_once "layout/footer.php";
-$title = "Aide";
+require_once "app/layout/header.php";
+require_once "app/layout/footer.php";
+$title = "S'inscrire";
 ?>
 
 <?php ob_start();?>
 
-<h1>Aide</h1>
+<h1>S'inscrire</h1>
 <pre>
 <?php print_r($_SERVER);?>
 </pre>

@@ -19,5 +19,14 @@
         <footer>
                 <?= $footer ?>
         </footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $( function() { $(".datepicker").datepicker(); });
+            $("arrow-menu").onclick = function(){
+            $("link-menu").style.display= "block";
+            };
+        </script>
     </body>
 </html>
