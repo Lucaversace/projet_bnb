@@ -1,16 +1,39 @@
-html{
+html
+{
     margin:0vw;
 }
-body{
+body
+{
     text-decoration: none;
 }
 
 /* DESKTOP */
-#fond{
+#fond
+{   position: absolute;
+    z-index: 1;
+    top:0vw;
     width: 100vw;
 }
+nav{
+    position: relative;
+    z-index: 2;
+}
+h1{
+    z-index: 2;
+    position: relative;
+}
+#link-menu{
+    width: 40%;
+}
+#link-menu ul{
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+}
 
-#cross-menu, #arrow-menu {
+
+#cross-menu, #arrow-menu 
+{
     display: none;
 }
 

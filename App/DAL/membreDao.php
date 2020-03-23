@@ -1,4 +1,5 @@
 <?php
+require_once "../(model/dbconnexion.php";
 /*
 * membreDao.php
 * membreDao
@@ -6,7 +7,7 @@
 * 2020
 */
 
-class annonceDao{
+class membreDao{
 
     private $db_connection;
 
@@ -15,7 +16,7 @@ class annonceDao{
         $this->db_connection = get_default_connection();
     }
 
-    public function add_annonce(membreEntity $membre):void
+    public function add_membre(membreEntity $membre):void
     {
         $cx = mysqli_connect(
             $this->db_connection['cx_server'], 

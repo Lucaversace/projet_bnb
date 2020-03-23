@@ -1,5 +1,5 @@
 <?php
-require_once "../(model/dbconnexion.php";
+require_once "../model/dbconnexion.php";
 
 /*
 * annonceDao.php
@@ -14,16 +14,12 @@ class annonceDao{
 
     public function __construct()
     {
-        $this->db_connection = get_default_connection();
+        $this->db_connection = db_connexion();
     }
 
     public function add_annonce(annonceEntity $annonce):void
     {
-        $cx = mysqli_connect(
-            $this->db_connection['cx_server'], 
-            $this->db_connection['cx_login'],
-            $this->db_connection['cx_pwd'], 
-            $this->db_connection['cx_dbname']);
+        $db_connection;
 
         $id = $annonce->id_annonce;
         $titre = $annonce->annonce_titre;
@@ -38,8 +34,5 @@ class annonceDao{
         "INSERT INTO `annonce` (`id_annonce`, `titre`, `description`, `nb_places`, `prix_personne`, `url_photo`, `membre_id`, `adresse_id`) 
         VALUES ($id, $titre, $descrip, $places, $prix, $url_img, $membre, $adresse)";
 
-        mysqli_query($cx, $query);
-
-        mysqli_close($cx);
     }
 }

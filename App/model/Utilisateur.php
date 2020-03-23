@@ -8,7 +8,7 @@
 
 class userEntity
 {
-    public $id_user;
+    public $id_utilisateur;
     public $login;
     public $mdp;
 }

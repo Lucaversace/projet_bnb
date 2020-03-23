@@ -1,4 +1,7 @@
 <?php
+
+require_once "../model/dbconnexion.php";
+require_once "../model/Reservation.php";
 /*
 * reservationDao.php
 * reservationDao
@@ -6,8 +9,7 @@
 * 2020
 */
 
-
-class annonceDao{
+class reservationDao{
 
     private $db_connection;
 
@@ -16,7 +18,7 @@ class annonceDao{
         $this->db_connection = get_default_connection();
     }
 
-    public function add_annonce(annonceEntity $annonce):void
+    public function add_reservation(reservationEntity $reservation):void
     {
         $cx = mysqli_connect(
             $this->db_connection['cx_server'], 
@@ -24,18 +26,18 @@ class annonceDao{
             $this->db_connection['cx_pwd'], 
             $this->db_connection['cx_dbname']);
 
-        $id = $annonce->id_annonce;
-        $titre = $annonce->annonce_titre;
-        $descrip = $annonce->annonce_descrip;
-        $places = $annonce->annonce_places;
-        $prix = $annonce->annonce_prix_pers;
-        $url_img = $annonce->url_img;
-        $membre = $annonce->annonce_membre_id;
-        $adresse = $annonce->adresse_id;
+        $id = $reservation->id_reservation;
+        $dateDeb = $reservation->date_resa_deb;
+        $dateFin = $reservation->date_resa_fin;
+        $annonces = $reservation->annonces_id;
+        $membre = $reservation->membre_id;
+        $nb_personnes = $reservation->nb_personnes;
+
+
 
         $query = 
-        "INSERT INTO `annonce` (`id_annonce`, `titre`, `description`, `nb_places`, `prix_personne`, `url_photo`, `membre_id`, `adresse_id`) 
-        VALUES ($id, $titre, $descrip, $places, $prix, $url_img, $membre, $adresse)";
+        "INSERT INTO `reservation` (`date_deb`, `date_fin`, `annonces_id`, `membre_id`, `nb_personne`) 
+         VALUES ($dateDeb, $dateFin, $annonces, $membre, $nb_personnes)";
 
         mysqli_query($cx, $query);
 

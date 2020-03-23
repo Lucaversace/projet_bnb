@@ -6,4 +6,11 @@
 #DirectoryIndex index.php /erreurs/403.php
 
 
+#RewriteEngine on
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+
+#RewriteRule ^\/projet\_bnb\/index\.php\?action\=([a-z])$ /$1
+#RewriteRule ^(.*)$ /projet_bnb/index.php [QSA,L]
+
 
