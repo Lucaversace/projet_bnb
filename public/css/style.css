@@ -22,11 +22,7 @@ h1{
     z-index: 2;
     position: relative;
 }
-#link-menu{
-    width: 40%;
-}
 #link-menu ul{
-    width: 50vw;
     display: flex;
     justify-content: space-between;
 }

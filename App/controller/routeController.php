@@ -19,6 +19,11 @@ class RouteController extends Controller
         $this->view('registration');
     }
 
+    public function get_login()
+    {
+        $this->view('login');
+    }
+
     public function get_help()
     {
         $this->view('help');

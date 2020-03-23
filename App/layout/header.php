@@ -11,11 +11,12 @@ ob_start();
     <img id="arrow-menu" src="public/img/arrow.png" alt="">
     <img id="cross-menu" src="public/img/cross.png" alt="">
     <div class="collapse navbar-collapse" id="menu">
-        <div id="link-menu">
-            <ul class="navbar-nav mr-auto">
+        <div class="w-100" id="link-menu">
+            <ul class="navbar-nav mr-auto ml-5 w-75">
                 <?= nav_item("action=home", "Accueil", $class);?>
                 <?= nav_item("action=deposit", "Déposer une annonce", $class);?>
-                <?= nav_item("action=registration", "Inscription", $class);?> 
+                <?= nav_item("action=registration", "Inscription", $class);?>
+                <?= nav_item("action=login", "Connexion", $class);?>
                 <?= nav_item("action=help", "Aide", $class);?>
             </ul>
         </div>

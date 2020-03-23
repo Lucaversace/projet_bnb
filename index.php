@@ -20,6 +20,9 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/projet_bnb/index.php?action=registration':
         $routing->get_registration();
         break;
+    case '/projet_bnb/index.php?action=login':   
+        $routing->get_login();
+        break;
     case '/projet_bnb/index.php?action=help':   
         $routing->get_help();
         break;
