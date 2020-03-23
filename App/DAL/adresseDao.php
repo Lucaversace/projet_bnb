@@ -32,7 +32,11 @@ class adresseDao{
         "INSERT INTO `adresse` ( `ville`, `code_postale`, `num_rue`, `nom_rue`, `lon`, `lat`) 
         VALUES (:ville, :codePostale, :numRue, :nomRue, :lon, :lat)";
 
+<<<<<<< HEAD
         $stmt = $pdo->prepare($query);
+=======
+        $stmt = $$pdo->prepare($query);
+>>>>>>> lucas
         $stmt->execute([
             ':ville' => $ville,
             ':codePostale' => $codePostale,

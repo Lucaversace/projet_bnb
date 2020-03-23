@@ -1,6 +1,6 @@
 <?php
-require_once "app/layout/header.php";
-require_once "app/layout/footer.php";
+require_once "../views/layout/header.php";
+require_once "../views/layout/footer.php";
 $title = "Accueil";
 ?>
 
@@ -8,7 +8,7 @@ $title = "Accueil";
 
 <h1>Réservez <br> des hébergements</h1>
 
-<img id="fond" src="public/img/accueil/fond.png" alt="">
+<img id="fond" src="/img/accueil/fond.png" alt="">
 
     <form id="form-accueil" action="" method="POST">
 
@@ -43,5 +43,5 @@ $title = "Accueil";
 <?php $content = ob_get_clean();?>
 
 <?php 
-require_once("template.php"); 
+require_once("../views/layout/template.php"); 
 ?>
