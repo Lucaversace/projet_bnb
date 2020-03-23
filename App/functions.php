@@ -1,7 +1,7 @@
 <?php
 namespace Feat;
 
-    function nav_item (string $param, string $titre, string $linkClass =''): string
+    function nav_item(string $param, string $titre, string $linkClass =''): string
     {
         $classe = "nav-item";
         if($_SERVER['QUERY_STRING'] === $param){
@@ -16,4 +16,5 @@ namespace Feat;
 HTML;
         
     }
+    
 ?>
