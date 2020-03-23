@@ -18,7 +18,7 @@ class adresseDao{
 
     public function add_adresse(adresseEntity $adresse):void
     {
-        $db_connection;
+        $pdo = $this->db_connection;
 
         $id = $adresse->id_adresse;
         $ville = $adresse->ville;
@@ -32,7 +32,7 @@ class adresseDao{
         "INSERT INTO `adresse` ( `ville`, `code_postale`, `num_rue`, `nom_rue`, `lon`, `lat`) 
         VALUES (:ville, :codePostale, :numRue, :nomRue, :lon, :lat)";
 
-        $stmt = $db_connection->prepare($query);
+        $stmt = $$pdo->prepare($query);
         $stmt->execute([
             ':ville' => $ville,
             ':codePostale' => $codePostale,
