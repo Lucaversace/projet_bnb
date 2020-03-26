@@ -13,4 +13,8 @@ et cloner le repo :
 
 Dans votre editeur de code ouvrez le dossier "projet_bnb"
 
+Lancez le serveur php : 
+
+- php -S localhost:8000 -t public/
+
 
