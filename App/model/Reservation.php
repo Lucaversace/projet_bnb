@@ -1,4 +1,5 @@
 <?php
+namespace App\Model;
 /*
 * reservation.php
 * reservationEntity
@@ -6,12 +7,13 @@
 * 2020
 */
 
-class reservationEntity
+class ReservationEntity
 {
     public $id_reservation;
-    public $date_resa_deb;
-    public $date_resa_fin;
+    public $date_resa;
+    public $date_deb;
+    public $date_fin;
     public $annonces_id;
     public $membre_id;
-    public $nb_personne;
+    public $prix_total;
 }

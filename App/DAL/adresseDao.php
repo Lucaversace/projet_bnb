@@ -1,5 +1,7 @@
 <?php
-require_once "../model/dbconnexion.php";
+namespace App\Dal;
+use App\Model\AdresseEntity;
+
 /*
 * adresseDao.php
 * adresseDao
@@ -7,18 +9,12 @@ require_once "../model/dbconnexion.php";
 * 2020
 */
 
-class adresseDao{
+class AdresseDao extends AbstractDao
+{
 
-    private $db_connection;
-
-    public function __construct()
+    public function add_adresse(AdresseEntity $adresse):void
     {
-        $this->db_connection = db_connexion();
-    }
-
-    public function add_adresse(adresseEntity $adresse):void
-    {
-        $pdo = $this->db_connection;
+        $pdo = $this->db_connexion;
 
         $id = $adresse->id_adresse;
         $ville = $adresse->ville;

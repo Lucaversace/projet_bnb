@@ -5,6 +5,6 @@
         "michelf/php-markdown": "^1.9"
     },
     "autoload": {
-        "psr-4": {"Feat\\" : "App"}
+        "psr-4": {"App\\" : "App/"}
     }
 }

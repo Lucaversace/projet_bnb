@@ -1,5 +1,6 @@
 <?php
-require_once "../model/dbconnexion.php";
+namespace App\Dal;
+use App\Model\AnnonceEntity;
 
 /*
 * annonceDao.php
@@ -8,18 +9,12 @@ require_once "../model/dbconnexion.php";
 * 2020
 */
 
-class annonceDao{
+class AnnonceDao extends AbstractDao
+{
 
-    private $db_connection;
-
-    public function __construct()
+    public function add_annonce(AnnonceEntity $annonce):void
     {
-        $this->db_connection = db_connexion();
-    }
-
-    public function add_annonce(annonceEntity $annonce):void
-    {
-        $db_connection;
+        $pdo = $this->db_connexion;
 
         $id = $annonce->id_annonce;
         $titre = $annonce->annonce_titre;

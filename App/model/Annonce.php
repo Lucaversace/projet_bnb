@@ -1,4 +1,5 @@
 <?php
+namespace App\Model;
 /*
 * annonce.php
 * annonceEntity
@@ -6,7 +7,7 @@
 * 2020
 */
 
-class annonceEntity
+class AnnonceEntity
 {
     public $id_annonce;
     public $annonce_titre;

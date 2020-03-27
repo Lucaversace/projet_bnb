@@ -1,4 +1,5 @@
 <?php
+namespace App\Model;
 /*
 * membre.php
 * membreEntity
@@ -6,12 +7,13 @@
 * 2020
 */
 
-class membreEntity
+class MembreEntity
 {
     public $id_membre;
     public $membre_prenom;
     public $membre_nom;
     public $membre_email;
     public $membre_solde;
-    public $user_id;
+    public $login;
+    public $mdp;
 }

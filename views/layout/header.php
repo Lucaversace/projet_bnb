@@ -1,6 +1,5 @@
 <?php
 
-
 ob_start();
 ?>
 <nav class="navbar navbar-expand-md navbar-dark">
@@ -10,11 +9,11 @@ ob_start();
     <div class="collapse navbar-collapse" id="menu">
         <div class="w-100" id="link-menu">
             <ul class="navbar-nav mr-auto ml-5 w-75">
-                <a href="home">Accueil</a>
-                <a href="deposit">Déposer une annonce</a>
-                <a href="login">Connexion</a>
-                <a href="registration">Inscription</a>
-                <a href="help">Aide</a>
+                <a href="Accueil">Accueil</a>
+                <a href="Depot">Déposer une annonce</a>
+                <a href="Connexion">Connexion</a>
+                <a href="Inscription">Inscription</a>
+                <a href="Aide">Aide</a>
             </ul>
         </div>
     </div>

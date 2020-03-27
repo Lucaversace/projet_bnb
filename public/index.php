@@ -1,8 +1,10 @@
 <?php
+require_once "vendor/autoload.php";
+use App\Control\RouteController;
+
 $sep = DIRECTORY_SEPARATOR;
 
 define('VIEWS', dirname(__DIR__). $sep . 'views/');
-require_once "../app/controller/routeController.php";
 ?>
 
 <pre>
@@ -16,22 +18,22 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/':
         $routing->get_home();
         break;
-    case '/home':
+    case '/Accueil':
         $routing->get_home();
         break;
     case '/index.php':
         $routing->get_home();
         break;
-    case '/deposit':
+    case '/Depot':
         $routing->get_deposit();
         break;
-    case '/registration':
+    case '/Inscription':
         $routing->get_registration();
         break;
-    case '/login':   
+    case '/Connexion':   
         $routing->get_login();
         break;
-    case '/help':   
+    case '/Aide':   
         $routing->get_help();
         break;
     default:

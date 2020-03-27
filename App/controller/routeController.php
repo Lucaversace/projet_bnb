@@ -1,6 +1,5 @@
 <?php
-
-require_once "Controller.php";
+namespace App\Control;
     
 class RouteController extends Controller
 {

@@ -1,9 +1,28 @@
 <?php
+namespace App\Model;
 
-function db_connexion():PDO
+use PDO;
+use PDOException;
+
+class ConnexionDb
 {
-    $user = 'root';
-    $pass = 'root';
-    $pdo = new PDO('mysql:host=localhost;dbname=projet_bnb', $user, $pass);
-    return $pdo;
+    public $pdo;
+    private $user;
+    private $pass;
+
+    public function __construct()
+    {   
+        $this->user = 'root';
+        $this->pass = "root";
+
+        try 
+        {
+            $this->pdo = new PDO('mysql:host=localhost;dbname=projet_bnb', $this->user, $this->pass);
+        } 
+        catch (PDOException $e) 
+        {
+            print "Erreur lors de la connexion à la base de donnée : " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
 }

@@ -1,5 +1,6 @@
 <?php
-require_once "../(model/dbconnexion.php";
+namespace App\Dal;
+use App\Model\MembreEntity;
 /*
 * membreDao.php
 * membreDao
@@ -9,20 +10,9 @@ require_once "../(model/dbconnexion.php";
 
 class membreDao{
 
-    private $db_connection;
-
-    public function __construct()
+    public function add_membre(MembreEntity $membre):void
     {
-        $this->db_connection = get_default_connection();
-    }
-
-    public function add_membre(membreEntity $membre):void
-    {
-        $cx = mysqli_connect(
-            $this->db_connection['cx_server'], 
-            $this->db_connection['cx_login'],
-            $this->db_connection['cx_pwd'], 
-            $this->db_connection['cx_dbname']);
+        $pdo = $this->db_connexion;
 
         $id = $membre->id_membre;
         $solde = $membre->membre_solde;
@@ -35,8 +25,6 @@ class membreDao{
         "INSERT INTO `membre` (`membre_prenom`, `membre_nom`, `membre_email`, `membre_solde`, `utilisateur_id`) 
         VALUES ($prenom, $nom, $email, $solde, $utilisateur_id)";
 
-        mysqli_query($cx, $query);
 
-        mysqli_close($cx);
     }
 }

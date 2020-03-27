@@ -1,4 +1,5 @@
 <?php
+namespace App\Model;
 /*
 * adresse.php
 * adresseEntity
@@ -6,7 +7,7 @@
 * 2020
 */
 
-class adresseEntity
+class AdresseEntity
 {
     public $id_address;
     public $ville;
