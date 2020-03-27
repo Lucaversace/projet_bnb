@@ -1,6 +1,6 @@
 <?php
-require_once "vendor/autoload.php";
-use App\Control\RouteController;
+require_once "../vendor/autoload.php";
+use App\Controller\RouteController;
 
 $sep = DIRECTORY_SEPARATOR;
 
@@ -12,7 +12,7 @@ define('VIEWS', dirname(__DIR__). $sep . 'views/');
 </pre>
 <?php
 
-$routing = new routeController();
+$routing = new RouteController();
 
 switch ($_SERVER['REQUEST_URI']) {
     case '/':
