@@ -1,6 +1,6 @@
 <?php
-namespace App\Control;
-    
+namespace App\Controller;
+
 class RouteController extends Controller
 {
     public function get_home()

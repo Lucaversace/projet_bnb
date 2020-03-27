@@ -1,9 +1,21 @@
 {   
-    "name": "info/web",
-    "description": "Projet_BNB",
-    "require": {
-        "michelf/php-markdown": "^1.9"
-    },
+    "name": "Ynov/projet",
+    "description": "Projet_Bnb",
+    "authors" : [
+        {
+            "name" : "Lucas Bento-Versace",
+            "email": "lucas.bentoversace@ynov.com"
+        },
+        {
+            "name" : "Victor Tollemer",
+            "email": "victor.tollemer@ynov.com"
+        },
+        {
+            "name" : "Valentin Joassard",
+            "email": "valentin.joassard@ynov.com"
+        }
+    ],
+    "require": {}, 
     "autoload": {
         "psr-4": {"App\\" : "App/"}
     }
