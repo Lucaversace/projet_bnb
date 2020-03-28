@@ -8,9 +8,7 @@ $sep = DIRECTORY_SEPARATOR;
 define('VIEWS', dirname(__DIR__). $sep . 'views/');
 ?>
 
-<pre>
-<?php var_dump($_SERVER);?>
-</pre>
+
 <?php
 
 $routing = new RouteController();

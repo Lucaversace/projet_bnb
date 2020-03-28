@@ -21,27 +21,44 @@ if(isset($_POST['email']) && isset($_POST['nom']) && isset($_POST['prenom']) && 
 }
 ob_start();
 ?>
+<style>body { 
 
+background-image: url('img/inscription/fond.png');
+height: 100vh;
 
-<div class=" mx-auto text-center w-50">
+background-repeat: no-repeat;
+background-size: cover;} 
+@media screen and (max-width: 670px) {
+body{
+  background-image:  url('img/inscription/fond_insc.png');
 
-  <h1 class="h3 font-weight-large  ">INSCRIPTION</h1>
+}
+h1{
+  font-size: 1.2em;
+}
+}
+</style>
+
+<div class=" mx-auto text-center w-50 ">
+
+<h1 class=" font-weight-large  mb-4 text-black  mt-5 ">INSCRIPTION</h1>
+  
 
   <form method="POST" >
 
     <!-- <img class="mb-4" src="public/img/inscrip.png" alt="" width="457" height="126"> -->
 
     <label for="inputEmail" class="sr-only">Email</label>
-    <input type="text" name="email" id="email" class="form-control" placeholder="Email" required="" autofocus="">
+    <input type="text" name="email" id="email" class="form-control mb-4" placeholder="Email" required="" autofocus="">
 
     <label for="inputText" class="sr-only">Nom</label>
-    <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom" required="" >
+    <input type="text" name="nom" id="nom" class="form-control mb-4" placeholder="Nom" required="" >
 
     <label for="inputText" class="sr-only">Prénom</label>
-    <input type="text" name="prenom" id="prenom" class="form-control" placeholder="Prénom" required="" >
+    <input type="text" name="prenom" id="prenom" class="form-control mb-4" placeholder="Prénom" required="" >
 
     <label for="inputPassword" class="sr-only">Mot de passe</label>
-    <input type="password" name="mdp" id="mdp" class="form-control" placeholder="Mot de passe">
+    <input type="password" name="mdp" id="mdp" class="form-control mb-4" placeholder="Mot de passe">
 
     <div class="mt-2 d-flex flex-column ">
       <div>
@@ -53,7 +70,7 @@ ob_start();
         <input type="radio" name="user" id="user" value="membre" />
       </div>
     </div>
-    <button class="btn btn-lg btn-primary btn-block btn-green mt-2" type="submit">S'inscrire</button>
+    <button class="btn btn-lg btn-block btn-success" type="submit">S'inscrire</button>
 
   </form>
 </div>
