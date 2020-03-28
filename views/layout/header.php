@@ -8,7 +8,7 @@ ob_start();
     <img id="cross-menu" src="img/cross.png" alt="">
     <div class="collapse navbar-collapse" id="menu">
         <div class="w-100" id="link-menu">
-            <ul class="navbar-nav d-flex mr-auto ml-5 w-75">
+            <ul class="navbar-nav d-flex justify-content-around mr-auto ml-5 w-75">
                 <a href="Accueil">Accueil</a>
                 <a href="Depot">Déposer une annonce</a>
                 <a href="Connexion">Connexion</a>

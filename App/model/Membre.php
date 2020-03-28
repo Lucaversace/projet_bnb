@@ -14,6 +14,6 @@ class MembreEntity
     public $membre_nom;
     public $membre_email;
     public $membre_solde;
-    public $login;
     public $mdp;
+    public $role;
 }
