@@ -14,16 +14,18 @@ class membreDao{
     {
         $pdo = $this->db_connexion;
 
-        $id = $membre->id_membre;
-        $solde = $membre->membre_solde;
         $prenom = $membre->membre_prenom;
         $nom = $membre->membre_nom;
         $email = $membre->membre_email;
-        $utilisateur_id = $membre->utilisateur_id;
+        $mdp = $membre->mdp;
+        $role = $membre->role;
 
         $query = 
-        "INSERT INTO `membre` (`membre_prenom`, `membre_nom`, `membre_email`, `membre_solde`, `utilisateur_id`) 
-        VALUES ($prenom, $nom, $email, $solde, $utilisateur_id)";
+        "INSERT INTO `membre` (`membre_prenom`, `membre_nom`, `membre_email`, `mdp`, `role`) 
+        VALUES (:prenom, :nom, :email, :mdp, :role)";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':prenom' => $prenom, ':nom' => $nom, ':email' => $email, ':mdp' => $mdp, ':role' => $role]);
 
 
     }
