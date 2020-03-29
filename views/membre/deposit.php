@@ -9,16 +9,16 @@ $title = "Déposer une annonce";
 main 
 { 
   background-image: url('img/desktop/fond.png');
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: repeat;
 } 
 
 @media screen and (max-width: 670px) 
 {
-  body
+  main
   {
-    background-image:  url('img/mobile/fond.png');
-    background-size: 10%;
+    background-image:  url('img/mobile/fondmobile.png');
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 
   }
@@ -94,7 +94,7 @@ main
         <label class="custom-file-label" for="inputGroupFile01">aucun fichier sél.</label>
       </div>
     </div>
-    <button class="mt-4 btn btn-lg btn-block form-group btn-success col-md-3 text-center mx-auto d-block" type="submit">Déposer l'annonce</button>
+    <button class="mt-4 btn btn-lg btn-block form-group btn-success col-md-3 text-center  mx-auto d-block" type="submit">Déposer l'annonce</button>
 
   </form>
 </div>

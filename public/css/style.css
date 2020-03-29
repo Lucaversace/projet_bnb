@@ -1,9 +1,9 @@
 *{margin:0;}
 
-#logo {
+#logo 
+{
     width: 10vw;
 }
-
 
 @media screen and (max-width: 670px)
 {
