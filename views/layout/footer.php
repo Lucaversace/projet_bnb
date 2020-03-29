@@ -1,7 +1,7 @@
 <?php ob_start();?>
 
 <div class="container-fluid">
-<footer style="border-top: 1px solid #D8D8D8" class="bg-dark row d-flex align-items-center flex-wrap justify-content-around">
+<footer class="bg-dark row d-flex align-items-center flex-wrap justify-content-around">
 
       <div class="col-md-3 mt-3 d-flex flex-column align-items-center text-center">
         <h5>Besoin d'aide ?</h5>
