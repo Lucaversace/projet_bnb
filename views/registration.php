@@ -21,46 +21,53 @@ if(isset($_POST['email']) && isset($_POST['nom']) && isset($_POST['prenom']) && 
 }
 ob_start();
 ?>
-<style>body { 
-
-background-image: url('img/inscription/fond.png');
-height: 100vh;
-
-background-repeat: no-repeat;
-background-size: cover;} 
-@media screen and (max-width: 670px) {
-body{
-  background-image:  url('img/inscription/fond_insc.png');
-
-}
-h1{
-  font-size: 1.2em;
-}
+<style>
+main 
+{ 
+  background-image: url('img/desktop/fond.png');
+  background-size: cover;
+  background-repeat: repeat;
+} 
+@media screen and (max-width: 670px)
+{
+  body
+  {
+    background-image:  url('img/mobile/fond.png');
+    background-size: 10%;
+    background-repeat: no-repeat;
+  }
+  h1
+  {
+    font-size: 1.6em;
+  }
 }
 </style>
 
-<div class=" mx-auto text-center w-50 ">
+<div class=" mx-auto text-center p-5">
 
-<h1 class=" font-weight-large  mb-4 text-black  mt-5 ">INSCRIPTION</h1>
+  <h1 class="mb-4 font-weight-large text-black ">Inscription</h1>
   
 
-  <form method="POST" >
+  <form method="POST" class="container-fluid">
 
     <!-- <img class="mb-4" src="public/img/inscrip.png" alt="" width="457" height="126"> -->
-
+<div class="form-group row mt-5">
     <label for="inputEmail" class="sr-only">Email</label>
-    <input type="text" name="email" id="email" class="form-control mb-4" placeholder="Email" required="" autofocus="">
-
-    <label for="inputText" class="sr-only">Nom</label>
-    <input type="text" name="nom" id="nom" class="form-control mb-4" placeholder="Nom" required="" >
-
-    <label for="inputText" class="sr-only">Prénom</label>
-    <input type="text" name="prenom" id="prenom" class="form-control mb-4" placeholder="Prénom" required="" >
-
-    <label for="inputPassword" class="sr-only">Mot de passe</label>
-    <input type="password" name="mdp" id="mdp" class="form-control mb-4" placeholder="Mot de passe">
-
-    <div class="mt-2 d-flex flex-column ">
+    <input type="text" name="email" id="email" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Email" required="" autofocus="">
+    </div>
+    <div class="form-group row">
+      <label for="inputText" class="sr-only">Nom</label>
+      <input type="text" name="nom" id="nom" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Nom" required="" >
+    </div>
+    <div class="form-group row">
+      <label for="inputText" class="sr-only">Prénom</label>
+      <input type="text" name="prenom" id="prenom" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Prénom" required="" >
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="sr-only">Mot de passe</label>
+      <input type="password" name="mdp" id="mdp" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Mot de passe">
+    </div>
+    <div class="form-group d-flex flex-column ">
       <div>
         <label for="inpuusertPassword" class="">Devenir utilisateur</label>
         <input type="radio" name="user" id="user" value="user" />
@@ -68,12 +75,12 @@ h1{
       <div>
         <label for="user" class="">Devenir membre</label>
         <input type="radio" name="user" id="user" value="membre" />
-      </div>
     </div>
-    <button class="btn btn-lg btn-block btn-success" type="submit">S'inscrire</button>
-
+      
+        <button class="mt-4 btn btn-lg btn-block form-group btn-success col-md-2 text-center mx-auto d-block" type="submit">S'inscrire</button>
   </form>
 </div>
+<small>* Devenir membre vous permettra de déposer une annonce d'hébergement</small>
 
 <?php $content = ob_get_clean();?>
 

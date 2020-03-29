@@ -6,9 +6,16 @@ $title = "Accueil";
 
 <?php ob_start();?>
 
-<h1>Réservez <br> des hébergements</h1>
+<style>
+    #fond
+    {
+        width: 100vw;
+    }
+</style>
 
-<img id="fond" src="/img/accueil/fond.png" alt="">
+<h1 class="p-2">Réservez <br> des hébergements</h1>
+
+<img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
     <form id="form-accueil" action="" method="POST">
 

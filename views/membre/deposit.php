@@ -5,16 +5,15 @@ $title = "Déposer une annonce";
 ?>
 <?php ob_start();?>
 
-<style>body { 
+<style>main { 
 
-background-image: url('img/inscription/fond.png');
-height: 100vh;
+background-image: url('img/desktop/fond.png');
+background-size: cover;
+} 
 
-background-repeat: no-repeat;
-background-size: cover;} 
 @media screen and (max-width: 670px) {
 body{
-  background-image:  url('img/inscription/fond_insc.png');
+  background-image:  url('img/mobile/fond.png');
 
 }
 h1{
@@ -23,7 +22,7 @@ h1{
 }
 </style>
 
-<div class=" mx-auto text-center w-50 ">
+<div class=" mx-auto text-center w-50 p-5">
 
 <h1 class=" font-weight-large  mb-4 text-black  mt-5 ">Déposer une annonce</h1>
   
