@@ -24,16 +24,20 @@ ob_start();
 <style>
 main 
 { 
-  background-image: url('img/desktop/fond.png');
-  background-size: cover;
+  
+  background-image: url('img/desktop/fondinscri.png');
+  margin: 0 auto;
+ padding:0 auto;
+ background-attachment:fixed;
+  background-size: 100% 100%;
   background-repeat: repeat;
 } 
 @media screen and (max-width: 670px)
 {
-  body
+  main
   {
-    background-image:  url('img/mobile/fond.png');
-    background-size: 10%;
+    background-image:  url('img/mobile/fondmobile.png');
+    background-size: 100% 100%;
     background-repeat: no-repeat;
   }
   h1
