@@ -4,8 +4,8 @@ ob_start();
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a href="/Accueil"><img id="logo" src="img/logo.png" alt="Logo iBed"></a>
-    <img class="d-md-none" id="arrow-menu" src="/img/mobile/arrow.png" alt="" >
-    <img class="d-none" id="cross-menu" src="img/mobile/cross.png" alt="">
+    <input id="mob-ham" class="" type="image" src="img/mobile/hamburger.png" onclick="tafonctionJavascript()">
+    <input id="mob-cross" class="d-none" type="image" src="img/mobile/cross.png" onclick="tafonctionJavascript()">
     <div class="collapse navbar-collapse" id="menu">
         <div class="w-100" id="link-menu">
             <ul class="navbar-nav d-flex justify-content-around mr-auto ml-5 w-75">

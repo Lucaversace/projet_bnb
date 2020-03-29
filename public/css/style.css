@@ -9,6 +9,14 @@
 {
     #logo
     {
-        width: 20vw;;
+        width: 20vw;
+    }
+    #mob-ham
+    {
+        width:8vw;
+    }
+    #mob-cross
+    {
+        width:4.5vw;
     }
 }

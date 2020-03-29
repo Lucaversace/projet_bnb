@@ -51,22 +51,26 @@ main
   <form method="POST" class="container-fluid">
 
     <!-- <img class="mb-4" src="public/img/inscrip.png" alt="" width="457" height="126"> -->
-<div class="form-group row mt-5">
-    <label for="inputEmail" class="sr-only">Email</label>
-    <input type="text" name="email" id="email" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Email" required="" autofocus="">
+    <div class="form-group row mt-5">
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input type="text" name="email" id="email" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Email" required="" autofocus="">
     </div>
+
     <div class="form-group row">
       <label for="inputText" class="sr-only">Nom</label>
       <input type="text" name="nom" id="nom" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Nom" required="" >
     </div>
+
     <div class="form-group row">
       <label for="inputText" class="sr-only">Prénom</label>
       <input type="text" name="prenom" id="prenom" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Prénom" required="" >
     </div>
+
     <div class="form-group row">
       <label for="inputPassword" class="sr-only">Mot de passe</label>
       <input type="password" name="mdp" id="mdp" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Mot de passe">
     </div>
+
     <div class="form-group d-flex flex-column ">
       <div>
         <label for="inpuusertPassword" class="">Devenir utilisateur</label>
@@ -75,7 +79,7 @@ main
       <div>
         <label for="user" class="">Devenir membre</label>
         <input type="radio" name="user" id="user" value="membre" />
-    </div>
+      </div>
       
         <button class="mt-4 btn btn-lg btn-block form-group btn-success col-md-2 text-center mx-auto d-block" type="submit">S'inscrire</button>
   </form>
