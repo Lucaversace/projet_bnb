@@ -27,5 +27,9 @@ class RouteController extends Controller
     {
         $this->view('help');
     }
+    public function get_annonce()
+    {
+        $this->view('annonce');
+    }
 
 }
