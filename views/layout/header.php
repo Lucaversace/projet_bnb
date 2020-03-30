@@ -30,6 +30,10 @@ ob_start();
                 <li class="text-center nav-item">
                     <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Inscription") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Inscription">Inscription</a>
                 </li>
+                <li class="text-center nav-item   "  >
+                <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Profil") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link "  href="/Profil"><div class="d-lg-none d-xl-none"> Mon Profil </div>
+                <img id="imgprofil" style ="width:40px; height:40px;" class="d-none d-lg-block d-xl-none d-none  d-xl-block" src="img/desktop/profildesktop.png" alt="profil"></a>
+                </li>
             </ul>
         </div>
     </div>

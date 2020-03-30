@@ -36,7 +36,7 @@ main
 
     <!-- <img class="mb-4" src="public/img/inscrip.png" alt="" width="457" height="126"> -->
     <div class="form-group row mt-5">
-      <label for="inputEmail" class="sr-only">Description</label>
+      <label for="inputEmail" class="sr-only">Titre</label>
       <input type="text" name="titre" id="Titre" class="form-control offset-md-2 col-md-3" placeholder="Titre de l'annonce" required="" autofocus="">
     </div>
 

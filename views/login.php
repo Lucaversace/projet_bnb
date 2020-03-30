@@ -12,11 +12,11 @@ main
   
   background-image: url('img/desktop/fondinscri.png');
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment:fixed;
   background-repeat: no-repeat;
-}
-#content {
-  height: 76vh;
+} 
+#content{
+height: 76vh;
 }
 @media screen and (max-width: 400px)
 {
