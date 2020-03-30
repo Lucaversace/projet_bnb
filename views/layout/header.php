@@ -19,19 +19,19 @@ ob_start();
             <ul class="w-100 nav navbar-nav d-flex justify-content-around">
 
                 <li class="text-center nav-item">
-                    <a id="link-accueil" <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Accueil") ? 'style=".nav-link{color:#8F5EB4 !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Accueil">Accueil</a>
+                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Accueil") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Accueil">Accueil</a>
                 </li>
                 <li class="text-center nav-item">
-                    <a  class="nav-link" href="/Depot">Déposer une annonce</a>
+                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Depot") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Depot">Déposer une annonce</a>
                 </li>
                 <li class="text-center nav-item">
-                    <a class="nav-link" href="/Connexion">Connexion</a>
+                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Connexion") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Connexion">Connexion</a>
                 </li>
                 <li class="text-center nav-item">
-                    <a class="nav-link" href="/Inscription">Inscription</a>
+                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Inscription") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Inscription">Inscription</a>
                 </li>
                 <li class="text-center nav-item">
-                    <a class="nav-link" href="/Aide">Aide</a>
+                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Aide") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Aide">Aide</a>
                 </li>
 
             </ul>
