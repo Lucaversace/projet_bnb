@@ -11,19 +11,18 @@ main
 { 
   
   background-image: url('img/desktop/fondinscri.png');
-  margin: 0 auto;
-  padding:0 auto;
-  background-attachment:fixed;
-  background-size: 100% 100%;
-  background-repeat: repeat;
-} 
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+#content {
+  height: 76vh;
+}
 @media screen and (max-width: 400px)
 {
   main
   {
     background-image:  url('img/mobile/fondconnectm.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
   }
   h1
   {
@@ -32,7 +31,7 @@ main
 }
 </style>
 
-<div class=" mx-auto text-center p-5">
+<div id="content" class=" mx-auto text-center p-5">
 
   <h1 class="mb-4 font-weight-large text-black ">Se connecter</h1>
   

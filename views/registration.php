@@ -26,19 +26,15 @@ main
 { 
   
   background-image: url('img/desktop/fond.png');
-  margin: 0 auto;
-  padding:0 auto;
-  background-attachment:fixed;
-  background-size: 100% 100%;
-  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 } 
 @media screen and (max-width: 400px)
 {
   main
   {
     background-image:  url('img/mobile/fondinscrim.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
   }
   h1
   {
