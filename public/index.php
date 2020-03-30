@@ -35,6 +35,9 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/Aide':   
         $routing->get_help();
         break;
+    case '/Profil':   
+        $routing->get_profil();
+        break;
     default:
         header('HTTP/1.0 404 Not Found');
 }
