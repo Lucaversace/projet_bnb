@@ -32,8 +32,8 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/Connexion':   
         $routing->get_login();
         break;
-    case '/Aide':   
-        $routing->get_help();
+    case '/Annonce':   
+        $routing->get_annonce();
         break;
     case '/Profil':   
         $routing->get_profil();

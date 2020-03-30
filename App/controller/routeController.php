@@ -32,4 +32,9 @@ class RouteController extends Controller
     {
         $this->view('profil');
     }
+    public function get_annonce()
+    {
+        $this->view('annonce');
+    }
+
 }
