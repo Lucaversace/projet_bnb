@@ -35,8 +35,6 @@ main
   main
   {
     background-image:  url('img/mobile/fondinscrim.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
   }
   h1
   {

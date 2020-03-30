@@ -2,18 +2,38 @@
 ob_start();
 ?>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a href="/Accueil"><img id="logo" src="img/logo.png" alt="Logo iBed"></a>
-    <input id="mob-ham" class="d-sm-none" type="image" src="img/mobile/hamburger.png" onclick="tafonctionJavascript()">
-    <input id="mob-cross" class="d-none" type="image" src="img/mobile/cross.png" onclick="tafonctionJavascript()">
-    <div class="collapse navbar-collapse" id="menu">
-        <div class="w-100">
-            <ul class="navbar-nav d-flex justify-content-around mr-auto ml-5 w-75">
-                <a class="text-white" href="Accueil">Accueil</a>
-                <a class="text-white" href="Depot">Déposer une annonce</a>
-                <a class="text-white" href="Connexion">Connexion</a>
-                <a class="text-white" href="Inscription">Inscription</a>
-                <a class="text-white" href="Aide">Aide</a>
+<nav class="navbar navbar-default bg-dark navbar-expand-lg" role="navigation">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand navbar-left" href="/Accueil"><img id="logo" src="img/logo.png" alt="Logo iBed"></a>
+
+        <div class="navbar-header">
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#mobile-menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mobile-menu">
+
+            <ul class="w-100 nav navbar-nav d-flex justify-content-around">
+
+                <li class="text-center nav-item">
+                    <a id="link-accueil" <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Accueil") ? 'style=".nav-link{color:#8F5EB4 !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Accueil">Accueil</a>
+                </li>
+                <li class="text-center nav-item">
+                    <a  class="nav-link" href="/Depot">Déposer une annonce</a>
+                </li>
+                <li class="text-center nav-item">
+                    <a class="nav-link" href="/Connexion">Connexion</a>
+                </li>
+                <li class="text-center nav-item">
+                    <a class="nav-link" href="/Inscription">Inscription</a>
+                </li>
+                <li class="text-center nav-item">
+                    <a class="nav-link" href="/Aide">Aide</a>
+                </li>
+
             </ul>
         </div>
     </div>
