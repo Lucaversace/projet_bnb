@@ -14,9 +14,7 @@ $title = "Accueil";
 </style>
 
 <h1 class="p-2">Réservez <br> des hébergements</h1>
-<pre>
-<?php var_dump($_SERVER);?>
-</pre>
+
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
     <form id="form-accueil" action="" method="POST">

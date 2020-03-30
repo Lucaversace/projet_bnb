@@ -22,7 +22,7 @@ main
 {
   main
   {
-    background-image:  url('img/mobile/fondconnectm.png');
+    background-image:  url('img/mobile/fond_co.png');
   }
   h1
   {

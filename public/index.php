@@ -32,9 +32,6 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/Connexion':   
         $routing->get_login();
         break;
-    case '/Aide':   
-        $routing->get_help();
-        break;
     default:
         header('HTTP/1.0 404 Not Found');
 }
