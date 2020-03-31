@@ -46,7 +46,7 @@ ob_start();
                 <button class="btn btn-default " type="button" id="dropdownprofil" data-toggle="dropdown">
                 <img  style ="width:40px; height:38px;" class="d-none d-lg-block d-xl-none d-none  d-xl-block" alt="profil" src="img/desktop/profildesktop.png">
                 </button>
-                     <div class="dropdown-menu " >
+                     <div class="dropdown-menu dropdown-menu-center" >
                          <a class="dropdown-item"  href="/Profil">Modifier Profil</a>
                          <a class="dropdown-item" href="/Membre">Voir mon Profil</a>
                          <a class="dropdown-item" href="">Deconnexion</a>

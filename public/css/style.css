@@ -28,7 +28,13 @@
 .dropdown-menu a:hover {
     text-decoration: underline;
 }
-
+.dropdown-menu-center {
+    right: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-30%, 0);
+}
 @media screen and (max-width: 670px)
 {
     #logo
