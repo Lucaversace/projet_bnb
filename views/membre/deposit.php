@@ -58,14 +58,19 @@ main
     
 
     <div class="form-group row">
-      <label class="col-form-label offset-md-2 col-md-2"  for="nombre">Prix de la nuitée/Personne</label>
-
-      <div class="input-group mt-2">
-
-        <div class="input-group-append">
-            <span class="input-group-text">€</span>
+      <div class="offset-md-2 col-md-2">
+          <label class="col-form-label"  for="nombre">Prix de la nuitée/Personne</label>
+      </div>
+      <div class="offset-md-1 col-md-3 d-flex align-items-center">
+        <div class="input-group">
+        <input type="text" class="form-control" placeholder="Ex : 79€">
+          <div class="input-group-append">
+          
+              <span class="input-group-text">€</span>
+          </div>
+          
+          
         </div>
-        <input type="text" class="form-control col-md-3" placeholder="Ex : 79€">
       </div>
     </div>
 
