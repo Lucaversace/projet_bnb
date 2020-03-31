@@ -13,8 +13,7 @@ $title = "Accueil";
     }
 </style>
 <a href="/Annonce">Annonce</a>
-<h1 class="p-2">Réservez <br> des hébergements </h1>
-
+<a href="/Membre">Profil Membre</a>
 
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
