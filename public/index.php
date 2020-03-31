@@ -38,6 +38,10 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/Profil':   
         $routing->get_profil();
         break;
+    case '/Membre':   
+        $routing->get_profil_member();
+        break;
     default:
+    
         header('HTTP/1.0 404 Not Found');
 }

@@ -25,6 +25,10 @@
     color:#8F5EB4;
 }
 
+.dropdown-menu a:hover {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 670px)
 {
     #logo

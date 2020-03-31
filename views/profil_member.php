@@ -7,7 +7,7 @@ $title = "membre";
 
 <?php ob_start();?>
 
-<h1>Aide</h1>
+<h1>Profil Membre</h1>
 
 
 <?php $content = ob_get_clean();?>
