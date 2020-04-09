@@ -28,9 +28,17 @@ class RouteController extends Controller
         $this->view('help');
     }
 
+    public function get_profil()
+    {
+        $this->view('profil');
+    }
     public function get_annonce()
     {
         $this->view('annonce');
+    }
+    public function get_profil_member()
+    {
+        $this->view('profil_member');
     }
 
     public function get_search()

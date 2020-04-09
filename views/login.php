@@ -12,11 +12,11 @@ main
   
   background-image: url('img/desktop/fondinscri.png');
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment:fixed;
   background-repeat: no-repeat;
-}
-#content {
-  height: 76vh;
+} 
+#content{
+height: 76vh;
 }
 @media screen and (max-width: 400px)
 {
@@ -33,7 +33,7 @@ main
 
 <div id="content" class=" mx-auto text-center p-5">
 
-  <h1 class="mb-4 font-weight-large text-black ">Se connecter</h1>
+  <h1 class="mb-4 font-weight-large text-black mt-5">Se connecter</h1>
   
 
   <form method="POST" class="container-fluid">

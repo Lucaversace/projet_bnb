@@ -27,7 +27,7 @@ main
   
   background-image: url('img/desktop/fond.png');
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment:fixed;
   background-repeat: no-repeat;
 } 
 @media screen and (max-width: 400px)
