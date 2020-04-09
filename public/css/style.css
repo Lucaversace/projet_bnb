@@ -24,7 +24,9 @@
 .h5footer {
     color:#8F5EB4;
 }
-
+.h1search{
+    color:#8F5EB4;
+}
 @media screen and (max-width: 670px)
 {
     #logo

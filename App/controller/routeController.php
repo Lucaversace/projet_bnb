@@ -33,4 +33,8 @@ class RouteController extends Controller
         $this->view('annonce');
     }
 
+    public function get_search()
+    {
+        $this->view('search');
+    }
 }

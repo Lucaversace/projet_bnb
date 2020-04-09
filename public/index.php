@@ -35,6 +35,9 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/Annonce':   
         $routing->get_annonce();
         break;
+    case '/Search':   
+            $routing->get_search();
+            break;
     default:
         header('HTTP/1.0 404 Not Found');
 }

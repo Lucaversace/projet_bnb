@@ -15,6 +15,7 @@ $title = "Accueil";
 
 <h1 class="p-2">Réservez <br> des hébergements</h1>
 <a href="/Annonce">Annonce</a>
+<a href="/Search">Search</a>
 
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
