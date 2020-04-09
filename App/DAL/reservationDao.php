@@ -8,8 +8,8 @@ use App\Model\ReservationEntity;
 * 2020
 */
 
-class reservationDao{
-
+class reservationDao extends AbstractDao
+{
     public function add_reservation(ReservationEntity $reservation):void
     {
         $pdo = $this->db_connexion;

@@ -4,9 +4,9 @@ namespace App\Model;
 use PDO;
 use PDOException;
 
-class ConnexionDb
+abstract class ConnexionDb
 {
-    public $pdo;
+    private $pdo;
     private $user;
     private $pass;
 

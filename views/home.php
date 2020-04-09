@@ -13,7 +13,7 @@ $title = "Accueil";
     }
 </style>
 <a href="/Annonce">Annonce</a>
-<a href="/Membre">Profil Membre</a>
+
 
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 

@@ -11,7 +11,6 @@ use App\Model\AnnonceEntity;
 
 class AnnonceDao extends AbstractDao
 {
-
     public function add_annonce(AnnonceEntity $annonce):void
     {
         $pdo = $this->db_connexion;

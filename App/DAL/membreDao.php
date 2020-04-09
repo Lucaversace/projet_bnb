@@ -8,8 +8,8 @@ use App\Model\MembreEntity;
 * 2020
 */
 
-class membreDao{
-
+class membreDao extends AbstractDao
+{
     public function add_membre(MembreEntity $membre):void
     {
         $pdo = $this->db_connexion;
