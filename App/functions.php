@@ -8,3 +8,9 @@ function active_lien(string $lien):void
     }
     else {echo "";}
 }
+
+function redirect(string $location):void
+{
+    header('Location: '.$location);
+    die();
+}
