@@ -10,11 +10,14 @@ namespace App\Model;
 class AnnonceEntity
 {
     public $id_annonce;
-    public $annonce_titre;
-    public $annonce_descrip;
-    public $annonce_places;
-    public $annonce_prix_pers;
+    public $titre;
+    public $descrip;
+    public $places;
+    public $prix_pers;
     public $url_img;
-    public $annonce_membre_id;
-    public $adresse_id;
+    public $membre_id;
+    public $ville;
+    public $code_postale;
+    public $num_rue;
+    public $nom_rue;
 }

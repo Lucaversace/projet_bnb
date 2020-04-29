@@ -6,6 +6,7 @@ use App\Controller\RouteController;
 $sep = DIRECTORY_SEPARATOR;
 
 define('VIEWS', dirname(__DIR__). $sep . 'views/');
+define('UTILS', dirname(__DIR__). $sep . 'App/');
 ?>
 
 
@@ -40,6 +41,9 @@ switch ($_SERVER['REQUEST_URI']) {
         break;
     case '/Membre':   
         $routing->get_profil_member();
+        break;
+    case '/Deconnexion':   
+        $routing->util_logout();
         break;
     default:
     

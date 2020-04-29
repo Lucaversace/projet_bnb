@@ -40,5 +40,9 @@ class RouteController extends Controller
     {
         $this->view('profil_member');
     }
+    public function util_logout()
+    {
+        $this->utils('logout');
+    }
 
 }

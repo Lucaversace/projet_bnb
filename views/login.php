@@ -6,7 +6,6 @@ require_once "../views/layout/header.php";
 require_once "../views/layout/footer.php";
 $title = "Connexion";
 
-var_dump($_POST);
 if(isset($_POST['email']) && isset($_POST['password']))
   {   
     $log = new MembreEntity();
@@ -16,8 +15,6 @@ if(isset($_POST['email']) && isset($_POST['password']))
     $loginService = new MembreService();
     $ligne = $loginService->log_connexion($log);
 
-    var_dump($ligne);
-    var_dump(password_verify($log->mdp, $ligne['mdp']));
     if($ligne && password_verify($log->mdp, $ligne['mdp']))
     {   
         session_start();

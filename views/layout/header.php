@@ -42,7 +42,7 @@ ob_start();
                 
                 
                 <li class="text-center nav-item  d-lg-none">
-                    <a class="nav-link "  href="/Profil"><div class="d-lg-none "> Déconnexion </div> </a>
+                    <a class="nav-link "  href="/Deconnexion"><div class="d-lg-none "> Déconnexion </div> </a>
                 </li>
                 <li class=" text-center nav-item d-lg-none">
                     <a class="nav-link disabled"  href=""><div class="d-lg-none "> Solde : 1225 € </div> </a>
@@ -56,7 +56,7 @@ ob_start();
                      <div class="dropdown-menu dropdown-menu-center" >
                          <a class="dropdown-item"  href="/Profil">Modifier mon profil</a>
                          <a class="dropdown-item" href="/Membre">Voir mon Profil</a>
-                         <a class="dropdown-item" href="App/logout.php">Déconnexion</a>
+                         <a class="dropdown-item" href="/Deconnexion">Déconnexion</a>
                          <a class="dropdown-item disabled" href="">Solde : 1225 €</a>
                     </div>  
                 </div>
