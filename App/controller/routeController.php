@@ -50,4 +50,8 @@ class RouteController extends Controller
         $this->utils('logout');
     }
 
+    public function get_search()
+    {
+        $this->view('search');
+    }
 }

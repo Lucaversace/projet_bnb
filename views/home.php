@@ -14,7 +14,6 @@ $title = "Accueil";
 </style>
 <a href="/Annonce">Annonce</a>
 
-
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
     <form id="form-accueil" action="/Search" method="POST">
