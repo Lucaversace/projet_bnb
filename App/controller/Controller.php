@@ -7,6 +7,10 @@ namespace App\Controller;
     {
         require VIEWS . DIRECTORY_SEPARATOR . $view . ".php";
     }
+    public function utils($util)
+    {
+        require UTILS . DIRECTORY_SEPARATOR . $util . ".php";
+    }
 }
 
 

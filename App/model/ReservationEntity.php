@@ -13,7 +13,8 @@ class ReservationEntity
     public $date_resa;
     public $date_deb;
     public $date_fin;
+    public $nb_personnes;
     public $annonces_id;
     public $membre_id;
-    public $prix_total;
+    public $prix_personne;
 }

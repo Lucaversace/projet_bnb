@@ -1,7 +1,34 @@
 <?php
+use App\Model\annonceEntity;
+use App\Service\annonceService;
+
+
 require_once "../views/layout/header.php";
 require_once "../views/layout/footer.php";
 $title = "Déposer une annonce";
+
+
+if(isset($_POST['titre']) and isset($_POST['description'])  and isset($_POST['prix']) and isset($_POST['nb_places'])
+ and isset($_POST['ville']) and isset($_POST['code_postale']) /*and isset($_POST['upload'])*/
+  and isset($_POST['num_rue']) and isset($_POST['nom_rue']))
+{   
+
+  $annonce = new annonceEntity();
+  $annonce->titre = $_POST['titre'];
+  $annonce->descrip = $_POST['description'];
+  $annonce->prix_pers = $_POST['prix'];
+  $annonce->places = $_POST['nb_places'];
+  $annonce->membre_id = $_SESSION['utilisateur']->id_membre;
+  $annonce->ville = $_POST['ville'];
+  $annonce->code_postale = $_POST['code_postale'];
+  $annonce->num_rue = $_POST['num_rue'];
+  $annonce->nom_rue = $_POST['nom_rue'];
+  $annonce->url_img = null;
+
+  $annonceService = new annonceService();
+  $stmt = $annonceService->add_annonce($annonce);
+}
+
 ?>
 <?php ob_start();?>
 
@@ -32,7 +59,7 @@ main
   <h1 class="font-weight-large text-black">Déposer une annonce</h1>
   
 
-  <form method="POST" class="container-fluid">
+  <form method="POST" class="container-fluid" enctype="multipart/form-data">
 
     <!-- <img class="mb-4" src="public/img/inscrip.png" alt="" width="457" height="126"> -->
     <div class="form-group row mt-5">
@@ -63,7 +90,7 @@ main
       </div>
       <div class="offset-md-1 col-md-3 d-flex align-items-center">
         <div class="input-group">
-        <input type="text" class="form-control" placeholder="Ex : 79€">
+        <input type="text" class="form-control" name="prix" placeholder="Ex : 79€">
           <div class="input-group-append">
           
               <span class="input-group-text">€</span>
@@ -80,8 +107,8 @@ main
     </div>
 
     <div class="form-group row ">
-      <label class="col-form-label offset-md-2 col-md-2" for="num_rue">Code postal</label>
-      <input type="text" name="num_rue" id="num_rue" class="form-control offset-md-1 col-md-3" placeholder="Ex : 69001" required="" >
+      <label class="col-form-label offset-md-2 col-md-2" for="num_rue">Code postale</label>
+      <input type="text" name="code_postale" id="num_rue" class="form-control offset-md-1 col-md-3" placeholder="Ex : 69001" required="" >
     </div>
 
     <div class="form-group row ">
@@ -95,8 +122,8 @@ main
     </div>
 
     <div class="form-group row">
-    <label for="exampleInputFile"  class="col-form-label col-md-2 offset-md-2">Choisir vos photos</label>
-    <input type="file" class="form-control-file offset-md-1 col-md-3" id="exampleInputFile" aria-describedby="fileHelp">
+    <label for="images"  class="col-form-label col-md-2 offset-md-2">Choisir vos photos</label>
+    <input type="file" class="form-control-file offset-md-1 col-md-3" name="upload" id="images" >
   </div>
     <button class="mt-4 btn btn-lg btn-block form-group btn-success col-md-3 text-center  mx-auto d-block" type="submit">Déposer l'annonce</button>
 

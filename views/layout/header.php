@@ -1,4 +1,6 @@
 <?php
+@session_start();
+require_once "../App/functions.php";
 ob_start();
 ?>
 
@@ -19,40 +21,46 @@ ob_start();
             <ul class="w-100 nav navbar-nav d-flex justify-content-around">
 
                 <li class="text-center nav-item">
-                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Accueil") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Accueil">Accueil</a>
+                    <a <?php active_lien('/Accueil');?> class="nav-link" href="/Accueil">Accueil</a>
                 </li>
                 <li class="text-center nav-item">
-                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Depot") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Depot">Déposer une annonce</a>
+                    <a <?php active_lien('/Depot');?> class="nav-link " href="/Depot">Déposer une annonce</a>
+                </li>
+                <?php if(!isset($_SESSION['status'])){?>
+                <li class="text-center nav-item">
+                    <a <?php active_lien('/Connexion');?> class="nav-link" href="/Connexion">Connexion</a>
                 </li>
                 <li class="text-center nav-item">
-                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Connexion") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Connexion">Connexion</a>
+                    <a <?php active_lien('/Inscription');?> class="nav-link" href="/Inscription">Inscription</a>
                 </li>
-                <li class="text-center nav-item">
-                    <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Inscription") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Inscription">Inscription</a>
+                <?php } ?>
+
+                <?php if(isset($_SESSION['status'])){?>
+                <li class="text-center nav-item d-lg-none">
+                    <a <?php active_lien('/Profil');?> class="nav-link "  href="/Profil"><div class="d-lg-none "> Profil </div> </a>
                 </li>
-                <li class="text-center nav-item d-lg-none "  >
-                <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Profil") ? 'style="color:#8F5EB4;font-weight:bold " !important;font-weight:bold !important;}"' : "" );?> class="nav-link "  href="/Profil"><div class="d-lg-none "> Profil </div> </a>
+                
+                
+                <li class="text-center nav-item  d-lg-none">
+                    <a class="nav-link "  href="/Deconnexion"><div class="d-lg-none "> Déconnexion </div> </a>
                 </li>
-                <li class="text-center nav-item  d-lg-none  "  >
-                <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Profil") ? 'style="color:#8F5EB4;font-weight:bold " !important;font-weight:bold !important;}"' : "" );?> class="nav-link "  href="/Profil"><div class="d-lg-none "> Deconnexion </div> </a>
-                </li>
-                <li class="text-center nav-item d-lg-none  "  >
-                <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "") ? 'style="color:#8F5EB4;font-weight:bold " !important;font-weight:bold !important;}"' : "" );?> class="nav-link disabled "  href=""><div class="d-lg-none "> Solde : 1225 € </div> </a>
+                <li class=" text-center nav-item d-lg-none">
+                    <a class="nav-link disabled"  href=""><div class="d-lg-none "> Solde : 1225 € </div> </a>
                 </li>
            
             
-
-                <div class="dropdown ">
+                <div class="dropdown">
                 <button class="btn btn-default " type="button" id="dropdownprofil" data-toggle="dropdown">
                 <img  style ="width:40px; height:38px;" class="d-none d-lg-block d-xl-none d-none  d-xl-block" alt="profil" src="img/desktop/profildesktop.png">
                 </button>
                      <div class="dropdown-menu dropdown-menu-center" >
-                         <a class="dropdown-item"  href="/Profil">Modifier Profil</a>
+                         <a class="dropdown-item"  href="/Profil">Modifier mon profil</a>
                          <a class="dropdown-item" href="/Membre">Voir mon Profil</a>
-                         <a class="dropdown-item" href="">Deconnexion</a>
+                         <a class="dropdown-item" href="/Deconnexion">Déconnexion</a>
                          <a class="dropdown-item disabled" href="">Solde : 1225 €</a>
                     </div>  
                 </div>
+                <?php } ?>
              </div>
             </ul>
     </div>

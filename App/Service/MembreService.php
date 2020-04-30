@@ -11,4 +11,11 @@ class MembreService
         $membredao = new MembreDao();
         $membredao->add_membre($membre);
     }
+
+    public function log_connexion(MembreEntity $membre)
+    {
+        $membredao = new MembreDao();
+        $ligne = $membredao->log_connexion($membre);
+        return $ligne;
+    }
 }
