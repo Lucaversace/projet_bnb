@@ -30,7 +30,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
         $_SESSION['status'] = 'connected';
         $_SESSION['utilisateur'] = $user;
 
-        redirect('index.php');
+        redirect('Accueil');
     }
     else{$alertForm = true;}
   }

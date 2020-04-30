@@ -25,7 +25,12 @@ class membreDao extends AbstractDao
         "INSERT INTO membre (prenom, nom, email, mdp, role) VALUES (:prenom, :nom, :email, :mdp, :role)";
 
         $stmt = $pdo->prepare($query);
-        $stmt->execute([':prenom' => $prenom, ':nom' => $nom, ':email' => $email, ':mdp' => $mdp, ':role' => $role]);
+        $stmt->execute([
+        ':prenom' => $prenom, 
+        ':nom' => $nom, 
+        ':email' => $email, 
+        ':mdp' => $mdp, 
+        ':role' => $role]);
 
     }
 

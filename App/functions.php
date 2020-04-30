@@ -14,3 +14,11 @@ function redirect(string $location):void
     header('Location: '.$location);
     die();
 }
+
+function testing_url(string $test)
+{   
+    $url = $_SERVER['REQUEST_URI'];
+    $tof = strpos($url, $test);
+
+    return $tof;
+}

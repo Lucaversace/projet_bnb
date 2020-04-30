@@ -1,8 +1,10 @@
 <?php
+use App\Model\annonceEntity;
+use App\Service\annonceService;
 
 require_once "../views/layout/header.php";
 require_once "../views/layout/footer.php";
-$title = "Aide";
+$title = "Annonce";
 ?>
 
 <?php ob_start();?>

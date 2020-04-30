@@ -48,8 +48,42 @@ class AnnonceDao extends AbstractDao
     }
 
 
-    public function get_annonce(AnnonceEntity $reservation)
-    {
+    public function get_all_annonce():array
+    {   
+        $pdo = $this->pdo;
+        $id_annonce = $_GET['id_annonce'];
+        $query = "SELECT * FROM annonce";
+
+        $stmt = $pdo->query($query);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $results;
+    }
+
+    public function get_search_annonce($nb_voyageur, $ville):array
+    {   
+
+        $pdo = $this->pdo;
+        $query = "SELECT * FROM annonce WHERE ville like :ville and nb_places like :nb_voyageur ";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':nb_voyageur' => $nb_voyageur, ':ville' => $ville]);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $results;
+
+    }
+
+    public function get_annonce($id_annonce)
+    {   
+
+        $pdo = $this->pdo;
+        $query = "SELECT * FROM annonce WHERE id = $id_annonce";
+
+        $stmt = $pdo->prepare($query);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
 
     }
 

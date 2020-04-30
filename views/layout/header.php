@@ -1,6 +1,6 @@
 <?php
 @session_start();
-require_once "../App/functions.php";
+
 ob_start();
 ?>
 

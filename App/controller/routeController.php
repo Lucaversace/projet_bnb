@@ -36,6 +36,11 @@ class RouteController extends Controller
     {
         $this->view('annonce');
     }
+
+    public function get_search()
+    {
+        $this->view('search');
+    }
     public function get_profil_member()
     {
         $this->view('profil_member');

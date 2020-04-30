@@ -4,5 +4,5 @@ session_start();
 if(isset($_SESSION['status']) && $_SESSION['status'] == 'connected')
 {
     $_SESSION = [];
-    redirect('/');
+    redirect('Accueil');
 }

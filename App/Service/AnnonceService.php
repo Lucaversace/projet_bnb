@@ -18,4 +18,11 @@ class AnnonceService
         $ligne = $annonceDao->get_annonce($annonce);
         return $ligne;
     }
+
+    public function get_search_annonce($nb_voyageur, $ville):array
+    {
+        $annonceDao = new AnnonceDao();
+        $ligne = $annonceDao->get_search_annonce($nb_voyageur, $ville);
+        return $ligne;
+    }
 }
