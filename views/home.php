@@ -12,11 +12,12 @@ $title = "Accueil";
         width: 100%;
     }
 </style>
-<a href="/Annonce">Annonce</a>
+
+<h1>Bienvenue sur iBed, la plateforme d'hébergement entre particuliers.</h1>
 
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
-    <form id="form-accueil" action="/Search" method="POST">
+    <form id="form-accueil" action="/Recherche" method="GET">
 
     <div>
         <label for="lieu"> Votre destination </label>

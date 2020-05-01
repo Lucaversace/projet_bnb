@@ -1,10 +1,21 @@
 <?php
-use App\Model\annonceEntity;
-use App\Service\annonceService;
+use App\Model\AnnonceEntity;
+use App\Service\AnnonceService;
 
 require_once "../views/layout/header.php";
 require_once "../views/layout/footer.php";
 $title = "Annonce";
+
+if (isset($_GET['id'])) 
+{
+    $id_annonce = $_GET['id'];
+    $annonceService  = new AnnonceService();
+    $resultSql = $annonceService->get_annonce_by_id($id_annonce);
+
+    $annonce = new AnnonceEntity($resultSql);
+    var_dump($annonce);
+}
+
 ?>
 
 <?php ob_start();?>
@@ -22,7 +33,7 @@ h1{color:#8F5EB4;}
         <div class="col-md-8 border-right border-light">
             <div class="row  d-flex justify-content-center">
                     <div class="p-5">
-                    <h1 class="">Titre de l'annonce</h1>
+                    <h1 class=""></h1>
                         <img style="border-radius:1.2vw !important;" class="w-100 shadow" src="img/desktop/annonce/ori4.png" alt="">
                     </div>
             </div>

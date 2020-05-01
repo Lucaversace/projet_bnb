@@ -1,4 +1,6 @@
 <?php
+
+use App\Model\AnnonceEntity;
 use App\Service\annonceService;
 
 require_once "../views/layout/header.php";
@@ -6,18 +8,18 @@ require_once "../views/layout/footer.php";
 
 $title = "Recherche";
 
-if (isset($_POST['lieu']) and isset($_POST['voyageur'])) 
+if (isset($_GET['lieu']) and isset($_GET['voyageur'])) 
 {
-    echo "sa marche";
-    $lieu = $_POST['lieu'];
-    $voyageur = $_POST['voyageur'];
+    $lieu = $_GET['lieu'];
+    $voyageur = $_GET['voyageur'];
 
     $annonceService = new annonceService();
     $results = $annonceService->get_search_annonce($voyageur, $lieu);
-
-    var_dump($results);
+    if ($results == null) 
+    {
+      $oups = true;
+    }
 }
-
 ?>
 
 <?php ob_start();?>
@@ -26,46 +28,48 @@ if (isset($_POST['lieu']) and isset($_POST['voyageur']))
       border-radius: 1vw;  
       width: 100%;
     }
-    .container-fluid:hover{
-      background-color: grey;
+    .annonce:hover{
+      background-color: #F5F5F5;
     }
-    a{
+    #annonce{
       color:black !important;
       text-decoration: none !important;
     }
 </style>
 
-<h1>Recherche</h1>
+<?php if(!isset($oups)){?>
+<h1 class="h1search  mt-5 ml-3 ">
+  Résultat<?php pluriels($results);?> pour <?= $voyageur?> voyageur<?php pluriels($voyageur)?> et <?= $lieu ?> pour destination
+</h1>
+<?php  }
+else{?>
+<h1>Oups, aucun résultat ne correspond à votre recherche  !</h1>
+<?php } ?>
 
-<?php foreach ($results[0] as $annonce => $data) 
-{
-    echo "{$annonce} => {$data}";
-}
-
-?>
-<h1 class="h1search col-md-5 mt-5 ml-3 pb-2 border-bottom border-dark"> Plus de "N" Recherche</h1>
-
-<a href="#">
-<div class="container-fluid">
+<?php foreach($results as $annonceSql){
+  $annonce = new AnnonceEntity($annonceSql);
+  ?>
+<a  id="annonce" href="Annonce?id=<?= $annonce->id_annonce?>">
+<div class="container-fluid annonce">
   <div  class="row mb-3 mt-5 ml-1 d-flex align-items-center " > 
           <div class="col-sm-3 mb-5 mt-5 ">
             <img src="img/desktop/annonce/ori4.png" alt=""> 
         </div> 
         <div class="col-sm-3  mr-sm-2 ">
-           <h8 class="pb-2">type d'hébergement</h8>
-            <h3  class="">Nom de l'hébergement</h3>
-            <h5  class="mt-md-5 mt-sm-0">Nombre de place</h5>
-            <h5  class="mt-md-5 mt-sm-0">Prix €</h5>
+            <h3  class=""><?php echo($annonce->titre);?></h3>
+            <h5  class="mt-md-5 mt-sm-0">Place<?php pluriels($annonce->nb_places); ?>  : <?php echo($annonce->nb_places);?></h5>
+            <h5  class="mt-md-5 mt-sm-0">Prix de la nuit/Personne :  <?php echo($annonce->prix_personne);?> €</h5>
         </div>
         <div class="d-none d-md-block col-sm-5 mb-4 ">
             <h5  class="">Description :</h5>
             <h8 class="">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae neque iaculis, semper elit sit amet, lobortis dolor. Duis scelerisque ex vitae sem cursus, quis imperdiet neque interdum. Aliquam laoreet rhoncus nisi nec lacinia. In interdum risus vel magna vestibulum interdum. Morbi at condimentum est. Vivamus elementum risus tellus, vehicula tempor tortor viverra luctus. 
+            <?php echo($annonce->description);?>
             </h8>
         </div>
 </div>
 </div>
 </a>
+<?php } ?>
 <?php $content = ob_get_clean();?>
 
 <?php 

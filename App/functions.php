@@ -22,3 +22,11 @@ function testing_url(string $test)
 
     return $tof;
 }
+
+function pluriels($var)
+{
+    if(isset($var) and $var > 1)
+    {
+        echo "s";
+    }
+}

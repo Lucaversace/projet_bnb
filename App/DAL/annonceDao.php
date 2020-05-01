@@ -68,22 +68,25 @@ class AnnonceDao extends AbstractDao
 
         $stmt = $pdo->prepare($query);
         $stmt->execute([':nb_voyageur' => $nb_voyageur, ':ville' => $ville]);
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         return $results;
 
     }
 
-    public function get_annonce($id_annonce)
+    public function get_annonce_by_id($id_annonce)
     {   
 
         $pdo = $this->pdo;
-        $query = "SELECT * FROM annonce WHERE id = $id_annonce";
+
+        $id = $id_annonce;
+        $query = "SELECT * FROM annonce WHERE id = :id_annonce";
 
         $stmt = $pdo->prepare($query);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->execute([':id_annonce' => $id]);
+        $ligne = $stmt->fetch(PDO::FETCH_OBJ);
 
-        return $result;
+        return $ligne;
 
     }
 

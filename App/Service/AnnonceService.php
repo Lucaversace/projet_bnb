@@ -12,10 +12,10 @@ class AnnonceService
         $annonceDao->add_annonce($annonce);
     }
 
-    public function get_annonce(AnnonceEntity $annonce)
+    public function get_annonce_by_id($id)
     {
         $annonceDao = new AnnonceDao();
-        $ligne = $annonceDao->get_annonce($annonce);
+        $ligne = $annonceDao->get_annonce_by_id($id);
         return $ligne;
     }
 

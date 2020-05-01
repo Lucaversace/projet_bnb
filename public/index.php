@@ -7,13 +7,14 @@ $sep = DIRECTORY_SEPARATOR;
 
 define('VIEWS', dirname(__DIR__). $sep . 'views/');
 define('UTILS', dirname(__DIR__). $sep . 'App/');
+
 ?>
 
 <?php
 
 $routing = new RouteController();
 
-$path = array("Accueil", "Annonce", "Inscription", "Depot", "Connexion", "Recherche", "Membre", "Profil", "Deconnexion");
+$path = array("Accueil", "Annonce", "Inscription", "Depot", "Connexion", "Recherche", "Membre", "Profil", "Deconnexion", "index.php");
 
 foreach ($path as $key) 
 {
@@ -33,6 +34,9 @@ else
     switch($key)
     {
         case 'Accueil':
+            $routing->get_home();
+        break;
+        case 'index.php':
             $routing->get_home();
         break;
         case 'Annonce':
