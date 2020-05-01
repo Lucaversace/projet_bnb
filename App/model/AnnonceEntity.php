@@ -21,18 +21,21 @@ class AnnonceEntity
     public $num_rue;
     public $nom_rue;
 
-    public function __construct($resultSql)
+    public function __construct($resultSql=null)
     {   
-        $this->id_annonce = $resultSql->id;
-        $this->titre = $resultSql->titre;
-        $this->prix_personne = $resultSql->prix_personne;
-        $this->nb_places = $resultSql->nb_places;
-        $this->description = $resultSql->description;
-        $this->url_photo = $resultSql->url_photo;
-        $this->membre_id = $resultSql->membre_id;
-        $this->ville = $resultSql->ville;
-        $this->code_postale = $resultSql->code_postale;
-        $this->num_rue = $resultSql->num_rue;
-        $this->nom_rue = $resultSql->nom_rue;
+        if($resultSql != null)
+        {
+            $this->id_annonce = $resultSql->id;
+            $this->titre = $resultSql->titre;
+            $this->prix_personne = $resultSql->prix_personne;
+            $this->nb_places = $resultSql->nb_places;
+            $this->description = $resultSql->description;
+            $this->url_photo = $resultSql->url_photo;
+            $this->membre_id = $resultSql->membre_id;
+            $this->ville = $resultSql->ville;
+            $this->code_postale = $resultSql->code_postale;
+            $this->num_rue = $resultSql->num_rue;
+            $this->nom_rue = $resultSql->nom_rue;
+        }
     }
 }

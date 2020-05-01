@@ -33,7 +33,7 @@ h1{color:#8F5EB4;}
         <div class="col-md-8 border-right border-light">
             <div class="row  d-flex justify-content-center">
                     <div class="p-5">
-                    <h1 class=""></h1>
+                    <h1 class=""><?= $annonce->titre?></h1>
                         <img style="border-radius:1.2vw !important;" class="w-100 shadow" src="img/desktop/annonce/ori4.png" alt="">
                     </div>
             </div>
@@ -52,8 +52,8 @@ h1{color:#8F5EB4;}
         <div class="col-4">
             <div class="p-5">
                 <div class="d-flex justify-content-between">
-                <p>100€</p>
-                <p>Nuit par Personne</p>
+                <p><?= $prix = $annonce->prix_personne?>€</p>
+                <p>Nuit/Personne</p>
                 </div>
                 
                 <div class="d-flex justify-content-between">
