@@ -1,45 +1,70 @@
 <?php
+use App\Model\AnnonceEntity;
+use App\Service\AnnonceService;
 
 require_once "../views/layout/header.php";
 require_once "../views/layout/footer.php";
-$title = "Aide";
+$title = "Annonce";
+
+if (isset($_GET['id'])) 
+{
+    $id_annonce = $_GET['id'];
+    $annonceService  = new AnnonceService();
+    $resultSql = $annonceService->get_annonce_by_id($id_annonce);
+
+    $annonce = new AnnonceEntity($resultSql);
+    var_dump($annonce);
+}
+
 ?>
 
 <?php ob_start();?>
 <style>
-
+.shadow {
+    box-shadow: 1vw 1vw 0.8vw rgba(0,0,0,0.16)!important;
+}
+h1{color:#8F5EB4;}
 </style>
-<h1>
 
-</h1>
-<div class="container-fluid bg-secondary">
-    <div class="col-8 col-xs-12 border-right border-dark">
-            <div class="row bg-dark d-flex justify-content-center">
-                <div class="p-5">
-                    <img class="w-100" src="img/desktop/annonce/ori4.png" alt="">
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-md-8 border-right border-light">
+            <div class="row  d-flex justify-content-center">
+                    <div class="p-5">
+                    <h1 class=""></h1>
+                        <img style="border-radius:1.2vw !important;" class="w-100 shadow" src="img/desktop/annonce/ori4.png" alt="">
+                    </div>
+            </div>
+
+            <div class="row d-flex justify-content-around mb-3">
+
+                <div class="col-5">
+                    <img style="border-radius:1.2vw !important;" class="w-100 shadow" src="img/desktop/annonce/ori5.png" alt="">
+                </div>
+
+                <div class="col-5">
+                    <img style="border-radius:1.2vw !important;" class="w-100 shadow" src="img/desktop/annonce/ori7.png" alt="">
                 </div>
             </div>
-            <div class="row d-flex justify-content-around bg-primary">
-                <div class="col-5">
-                    <img class="w-100" src="img/desktop/annonce/ori5.png" alt="">
-                </div>
-                <div class="col-5">
-                    <img class="w-100" src="img/desktop/annonce/ori7.png" alt="">
-                </div>
-            </div>
-            
         </div>
-        <div class="col-4 bg-warning">
-                <div class="row d-flex justify-content-around">
-                    <div class="p-3">
-                        <img class="w-100" src="img/desktop/annonce/ori5.png" alt="">
-                    </div>
-                    <div class="p-3">
-                        <img class="w-100" src="img/desktop/annonce/ori7.png" alt="">
-                    </div>
+        <div class="col-4">
+            <div class="p-5">
+                <div class="d-flex justify-content-between">
+                <p>100€</p>
+                <p>Nuit par Personne</p>
                 </div>
-    </div>
-
+                
+                <div class="d-flex justify-content-between">
+                    <p>Total</p>
+                    <p>737 €</p>
+                </div>
+                <button class="btn btn-success w-100">Réserver</button>
+                <a href="/Membre">Profil Membre</a>
+            </div>
+        </div>
+    </div>  
 </div>
 
 <?php $content = ob_get_clean();?>

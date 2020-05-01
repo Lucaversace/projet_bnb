@@ -12,26 +12,18 @@ $title = "Accueil";
         width: 100%;
     }
 </style>
-<a href="/Annonce">Annonce</a>
-<a href="/Membre">Profil Membre</a>
+
+<h1>Bienvenue sur iBed, la plateforme d'hébergement entre particuliers.</h1>
 
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
-    <form id="form-accueil" action="" method="POST">
+    <form id="form-accueil" action="/Recherche" method="GET">
 
     <div>
-        <label for="lieu"> Où ?</label>
+        <label for="lieu"> Votre destination </label>
         <input  type="text" name="lieu">
     </div>
-    
-    <div>
-        <label for="date"> Date début</label>
-        <input type="dated" class="datepicker" name="dated">
-    </div>
-    <div>
-        <label for="datef">Date fin</label>
-        <input type="date" class="datepicker" name="datef">
-    </div>
+
     <div>
         <label for="voyageur">Nombre de voyageurs</label>
         <select name="voyageur">

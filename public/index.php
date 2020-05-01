@@ -1,47 +1,67 @@
 <?php
-
+require_once "../App/functions.php";
 require_once "../vendor/autoload.php";
 use App\Controller\RouteController;
 
 $sep = DIRECTORY_SEPARATOR;
 
 define('VIEWS', dirname(__DIR__). $sep . 'views/');
-?>
+define('UTILS', dirname(__DIR__). $sep . 'App/');
 
+?>
 
 <?php
 
 $routing = new RouteController();
 
-switch ($_SERVER['REQUEST_URI']) {
-    case '/':
-        $routing->get_home();
+$path = array("Accueil", "Annonce", "Inscription", "Depot", "Connexion", "Recherche", "Membre", "Profil", "Deconnexion", "index.php");
+
+foreach ($path as $key) 
+{
+    $tof = testing_url($key);
+    if($tof)
+    {
+    break;
+    }
+}
+
+if(!$tof)
+{
+    header('HTTP/1.0 404 Not Found');
+}
+else
+{
+    switch($key)
+    {
+        case 'Accueil':
+            $routing->get_home();
         break;
-    case '/Accueil':
-        $routing->get_home();
+        case 'index.php':
+            $routing->get_home();
         break;
-    case '/index.php':
-        $routing->get_home();
+        case 'Annonce':
+            $routing->get_annonce();
         break;
-    case '/Depot':
-        $routing->get_deposit();
+        case 'Depot':
+            $routing->get_deposit();
         break;
-    case '/Inscription':
-        $routing->get_registration();
+        case 'Inscription':
+            $routing->get_registration();
         break;
-    case '/Connexion':   
-        $routing->get_login();
+        case 'Connexion':
+            $routing->get_login();
         break;
-    case '/Annonce':   
-        $routing->get_annonce();
+        case 'Recherche':
+            $routing->get_search();
         break;
-    case '/Profil':   
-        $routing->get_profil();
+        case 'Membre':
+            $routing->get_profil_member();
         break;
-    case '/Membre':   
-        $routing->get_profil_member();
+        case 'Profil':
+            $routing->get_profil();
         break;
-    default:
-    
-        header('HTTP/1.0 404 Not Found');
+        case 'Deconnexion':
+            $routing->util_logout();
+        break;
+    }
 }
