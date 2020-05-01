@@ -18,7 +18,7 @@ ob_start();
 
             <ul class="w-100 nav navbar-nav d-flex justify-content-around">
 
-                <li class="text-center nav-item">
+                <li class="text-center nav-item ">
                     <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Accueil") ? 'style="color:#8F5EB4;font-weight:bold" !important;font-weight:bold !important;}"' : "" );?> class="nav-link" href="/Accueil">Accueil</a>
                 </li>
                 <li class="text-center nav-item">
@@ -34,7 +34,7 @@ ob_start();
                 <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Profil") ? 'style="color:#8F5EB4;font-weight:bold " !important;font-weight:bold !important;}"' : "" );?> class="nav-link "  href="/Profil"><div class="d-lg-none "> Profil </div> </a>
                 </li>
                 <li class="text-center nav-item  d-lg-none  "  >
-                <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "/Profil") ? 'style="color:#8F5EB4;font-weight:bold " !important;font-weight:bold !important;}"' : "" );?> class="nav-link "  href="/Profil"><div class="d-lg-none "> Deconnexion </div> </a>
+                <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "") ? 'style="color:#8F5EB4;font-weight:bold " !important;font-weight:bold !important;}"' : "" );?> class="nav-link "  href=""><div class="d-lg-none "> Deconnexion </div> </a>
                 </li>
                 <li class="text-center nav-item d-lg-none  "  >
                 <a <?php echo( $style = ($_SERVER['REQUEST_URI'] == "") ? 'style="color:#8F5EB4;font-weight:bold " !important;font-weight:bold !important;}"' : "" );?> class="nav-link disabled "  href=""><div class="d-lg-none "> Solde : 1225 € </div> </a>
