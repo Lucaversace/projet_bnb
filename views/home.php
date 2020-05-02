@@ -6,6 +6,7 @@ $title = "Accueil";
 
 <?php ob_start();?>
 
+
 <style>
     #fond
     {
@@ -13,12 +14,8 @@ $title = "Accueil";
     }
 </style>
 <a href="/Annonce">Annonce</a>
-<<<<<<< HEAD
 <a href="/Search">Search</a>
 <a href="/Membre">Profil Membre</a>
-=======
-
->>>>>>> caa7532886d85e4be6c4aac23101173169f6115c
 
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
