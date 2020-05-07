@@ -6,6 +6,7 @@ $title = "Accueil";
 
 <?php ob_start();?>
 
+
 <style>
     #fond
     {
@@ -14,6 +15,9 @@ $title = "Accueil";
 </style>
 
 <h1>Bienvenue sur iBed, la plateforme d'hébergement entre particuliers.</h1>
+<a href="/Annonce">Annonce</a>
+<a href="/Search">Search</a>
+<a href="/Membre">Profil Membre</a>
 
 <img id="fond" src="/img/desktop/accueil/fond.png" alt="">
 
