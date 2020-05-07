@@ -27,16 +27,13 @@ foreach ($path as $key)
 
 if(!$tof)
 {
-    header('HTTP/1.0 404 Not Found');
+    $routing->get_home();
 }
 else
 {
     switch($key)
     {
         case 'Accueil':
-            $routing->get_home();
-        break;
-        case 'index.php':
             $routing->get_home();
         break;
         case 'Annonce':

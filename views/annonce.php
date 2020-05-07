@@ -1,6 +1,8 @@
 <?php
 use App\Model\AnnonceEntity;
 use App\Service\AnnonceService;
+use App\Model\MembreEntity;
+use App\Service\MembreService;
 
 require_once "../views/layout/header.php";
 require_once "../views/layout/footer.php";
@@ -10,10 +12,16 @@ if (isset($_GET['id']))
 {
     $id_annonce = $_GET['id'];
     $annonceService  = new AnnonceService();
-    $resultSql = $annonceService->get_annonce_by_id($id_annonce);
+    $resultAnnonce = $annonceService->get_annonce_by_id($id_annonce);
 
-    $annonce = new AnnonceEntity($resultSql);
-    var_dump($annonce);
+    $annonce = new AnnonceEntity($resultAnnonce);
+    $id_membre = $annonce->membre_id;
+
+    $membreService = new MembreService();
+    $membreResult = $membreService->get_membre_by_id($id_membre);
+
+    $membre = new MembreEntity($membreResult);
+
 }
 
 ?>
@@ -61,7 +69,7 @@ h1{color:#8F5EB4;}
                     <p>737 €</p>
                 </div>
                 <button class="btn btn-success w-100">Réserver</button>
-                <a href="/Membre">Profil Membre</a>
+                <a href="/Membre?id=<?=$annonce->membre_id?>">Profil de <?php echo strtoupper($membre->membre_nom) ?> <?php echo ucfirst($membre->membre_prenom); ?></a>
             </div>
         </div>
     </div>  

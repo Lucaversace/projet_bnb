@@ -50,4 +50,35 @@ class membreDao extends AbstractDao
 
         return $ligne;
     }
+
+    public function get_membre_by_id($id)
+    {
+        $pdo  = $this->pdo;
+        $id_membre = $id;
+
+        $query = "SELECT * FROM membre  WHERE id = :id_membre";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':id_membre' => $id_membre]);
+        $membre = $stmt->fetch(PDO::FETCH_OBJ);
+
+        return $membre;
+    }
+
+
+    public function update_user($id,$email, $mdp, $solde)
+    {
+        $pdo = $this->pdo;
+        $id_membre = $id;
+        $newSolde = $solde;
+        $newPassword = $mdp;
+        $newEmail = $email;
+
+        $query = "UPDATE membre SET solde = :newSolde, mdp = :newPassword, email = :newEmail WHERE id = :id_membre";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':id_membre' => $id_membre, ':newPassword' => $newPassword, ':newEmail' => $newEmail, ':newSolde' => $newSolde]);
+
+        return $stmt->rowCount();
+    }
 }

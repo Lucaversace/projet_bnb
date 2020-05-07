@@ -18,4 +18,18 @@ class MembreService
         $ligne = $membredao->log_connexion($membre);
         return $ligne;
     }
+
+    public function get_membre_by_id($id)
+    {
+        $membredao = new MembreDao();
+        $membre = $membredao->get_membre_by_id($id);
+        return $membre;
+    }
+
+    public function update_user($id,$email, $mdp, $solde)
+    {
+        $membredao = new MembreDao();
+        $stmt = $membredao->update_user($id,$email,$mdp,$solde);
+        return $stmt;
+    }
 }
