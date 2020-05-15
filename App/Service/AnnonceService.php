@@ -69,4 +69,10 @@ class AnnonceService
         $results = $annonceDao->get_all_image_by_id_annonce($id_annonce);
         return $results;
     }
+    public function get_first_image_by_id_annonce($id_annonce)
+    {
+        $annonceDao = new AnnonceDao();
+        $results = $annonceDao->get_first_image_by_id_annonce($id_annonce);
+        return $results;
+    }
 }

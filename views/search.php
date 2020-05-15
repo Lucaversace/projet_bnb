@@ -47,36 +47,37 @@ else{?>
 <h1>Oups, aucun résultat ne correspond à votre recherche  !</h1>
 <?php } ?>
 
-<?php foreach($results as $annonceSql){
-  $annonce = new AnnonceEntity($annonceSql);
-  $resultsImage = $annonceService->get_all_image_by_id_annonce($annonce->id_annonce);
-  foreach ($resultsImage as $image) 
-  {
-    $tab[] = $image['nom'];
-  }
-  ?>
- 
-  
-<a  id="annonce" href="Annonce?id=<?= $annonce->id_annonce?>">
-<div class="container-fluid annonce">
-  <div  class="row mb-3 mt-5 ml-1 d-flex align-items-center " > 
-          <div class="col-sm-3 mb-5 mt-5 ">
-            <img src="/upload/<?= $tab[0] ?>" alt=""> 
-        </div> 
-        <div class="col-sm-3  mr-sm-2 ">
-            <h3  class=""><?php echo($annonce->titre);?></h3>
-            <h5  class="mt-md-5 mt-sm-0">Place<?php pluriels($annonce->nb_places); ?>  : <?php echo($annonce->nb_places);?></h5>
-            <h5  class="mt-md-5 mt-sm-0">Prix de la nuit/Personne :  <?php echo($annonce->prix_personne);?> €</h5>
+<?php foreach($results as $annonceSql)
+{
+    $annonce = new AnnonceEntity($annonceSql);
+    $resultsImage = $annonceService->get_first_image_by_id_annonce($annonce->id_annonce);
+    $tab = array();
+    foreach ($resultsImage as $image) 
+    {
+      $tab= array();
+      $tab[] = $image['nom'];
+    }?>
+     
+    <a  id="annonce" href="Annonce?id=<?= $annonce->id_annonce?>">
+      <div class="container-fluid annonce">
+        <div  class="row mb-3 mt-5 ml-1 d-flex align-items-center " > 
+            <div class="col-sm-3 mb-5 mt-5 ">
+              <img src="/upload/<?= $tab[0] ?>" alt=""> 
+            </div> 
+            <div class="col-sm-3  mr-sm-2 ">
+                <h3  class=""><?php echo($annonce->titre);?></h3>
+                <h5  class="mt-md-5 mt-sm-0">Place<?php pluriels($annonce->nb_places); ?>  : <?php echo($annonce->nb_places);?></h5>
+                <h5  class="mt-md-5 mt-sm-0">Prix de la nuit/Personne :  <?php echo($annonce->prix_personne);?> €</h5>
+            </div>
+            <div class="d-none d-md-block col-sm-5 mb-4 ">
+                <h5  class="">Description :</h5>
+                <h8 class="">
+                <?php echo($annonce->description);?>
+                </h8>
+            </div>
         </div>
-        <div class="d-none d-md-block col-sm-5 mb-4 ">
-            <h5  class="">Description :</h5>
-            <h8 class="">
-            <?php echo($annonce->description);?>
-            </h8>
-        </div>
-</div>
-</div>
-</a>
+      </div>
+    </a>
 <?php } ?>
 <?php $content = ob_get_clean();?>
 

@@ -65,12 +65,22 @@ $title = "Profil de " . $membre->membre_prenom;
 			   <hr></hr>
 			   <h6> Annonce<?php pluriels($resultsAnnonce);?> de <?= ucfirst($membre->membre_prenom) ?> : <h6>
 			   <div class="Membre-img d-flex justify-content-around flex-wrap">
-				   <?php foreach ($resultsAnnonce as $annonce) {
-					   ?>
-						<div class="col-4 mt-3">
-						<a href="/Annonce?id=<?= $annonce->id ?>"><img src="img/desktop/annonce/ori4.png" class="img-responsive img-annonce" alt=""></a>
+				   <?php foreach ($resultsAnnonce as $annonce) 
+				   {
+					   $resultsImage = $annonceService->get_first_image_by_id_annonce($annonce->id);
+					   $tab = array();
+					   foreach ($resultsImage as $image) 
+					   	{
+							$tab= array();
+							$tab[] = $image['nom'];
+						}?>
+						
+						<div class="annonce p-3 col-4 mt-3">
+						<a href="/Annonce?id=<?= $annonce->id ?>"><img src="/upload/<?= $tab[0] ?>" class="img-responsive img-annonce" alt=""></a>
+						<div ><?= $annonce->titre ?></div>
 						</div>
-				   <?php }?>
+						
+				<?php }?>
 				</div>
 				
 			   </div>
@@ -84,7 +94,11 @@ $title = "Profil de " . $membre->membre_prenom;
 body {
   background: #F1F3FA;
 }
-
+.annonce:hover
+{
+	background-color: #F5F5F5;
+	border-radius: 2vw;
+}
 .Membre {
   margin: 20px 0;
 }
@@ -136,13 +150,14 @@ width: 100%;
   margin-right: 5px;
   margin-top: 0.2vw;
 }   
-
+img{
+	border-radius: 0.6vw;
+}
 /* CENTRE */
 .Membre-centre {
   padding: 30px;
   background: #fff;
   min-height: 460px;
-  
   border-radius: 0.6vw;
 }
  </style>

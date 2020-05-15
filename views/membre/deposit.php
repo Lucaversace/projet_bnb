@@ -46,7 +46,7 @@ and isset($_POST['nom_rue']) && !empty($_POST['nom_rue']))
       if (move_uploaded_file($tmp_name, $destination)) 
       {
         $boolExist = $annonceService->exist_image($filename, $id_annonce);
-
+        
         if($boolExist)
         {
           $boolInsert = $annonceService->insert_image($filename, $id_annonce);
@@ -57,15 +57,17 @@ and isset($_POST['nom_rue']) && !empty($_POST['nom_rue']))
 
           $trueInsert = true;
         }
-        
-     }
+      }
+      else
+      {
+        $errorExist = true;
+      }
     }
     else
     {
       $errorUpload = true;
     }
-  }
-
+  } 
 }
 ?>
 <?php ob_start();?>
@@ -100,6 +102,10 @@ main
 
   <?php  if(isset($errorUpload) && $errorUpload){?>
   <div class="alert alert-danger">Fichier trop volumineux</div>
+  <?php } ?>
+
+  <?php  if(isset($errorExist) && $errorExist){?>
+  <div class="alert alert-danger">Le ou les fichiers éxiste déjà</div>
   <?php } ?>
 
   <h1 class="font-weight-large text-black">Déposer une annonce</h1>
@@ -168,7 +174,7 @@ main
     </div>
 
     <div class="form-group row">
-    <label for="images"  class="col-form-label col-md-2 offset-md-2">Choisir vos photos</label>
+    <label for="images"  class="col-form-label col-md-2 offset-md-2">Veuillez sélectionner vos 3 photos</label>
     <input type="file" class="form-control-file offset-md-1 col-md-3" multiple name="upload[]" id="images" >
   </div>
     <button class="mt-4 btn btn-lg btn-block form-group btn-success col-md-3 text-center  mx-auto d-block" type="submit">Déposer l'annonce</button>

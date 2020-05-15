@@ -174,6 +174,18 @@ class AnnonceDao extends AbstractDao
     
         return $results;
     }
+    public function get_first_image_by_id_annonce($id_annonce)
+    {   
+        $pdo = $this->pdo;
+
+        $query = "SELECT nom FROM images WHERE  id_annonce = :id_annonce LIMIT 1";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':id_annonce' => $id_annonce]);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $results;
+    }
 
     public function delete_annonce(AnnonceEntity $reservation):void
     {
