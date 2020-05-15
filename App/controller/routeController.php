@@ -49,4 +49,9 @@ class RouteController extends Controller
     {
         $this->utils('logout');
     }
+    public function get_forget()
+    {
+        $this->view('forgetpasswd');
+    }
 }
+

@@ -16,5 +16,5 @@ class ReservationEntity
     public $nb_personnes;
     public $annonces_id;
     public $membre_id;
-    public $prix_personne;
+    public $prix_total;
 }

@@ -33,7 +33,7 @@ class AnnonceDao extends AbstractDao
         VALUES (:titre, :descrip, :places, :prix, :membre, :ville, :code_postale, :num_rue, :nom_rue)";
 
         $stmt = $pdo->prepare($query);
-        $result = $stmt->execute([
+        $stmt = $stmt->execute([
         ':titre' => $titre, 
         ':descrip' => $descrip, 
         ':places' => $places, 
@@ -44,7 +44,7 @@ class AnnonceDao extends AbstractDao
         ':num_rue' => $num_rue, 
         ':nom_rue' => $nom_rue]);
         
-        return $result;
+        return $stmt;
     }
 
 
@@ -88,6 +88,91 @@ class AnnonceDao extends AbstractDao
 
         return $ligne;
 
+    }
+
+    public function get_annonce_by_id_membre($id_membre)
+    {   
+
+        $pdo = $this->pdo;
+
+        $id = $id_membre;
+        $query = "SELECT * FROM annonce WHERE membre_id = :id_membre";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':id_membre' => $id]);
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+        return $results;
+
+    }
+    public function exist_image($filename, $id_annonce)
+    {
+        $pdo = $this->pdo;
+
+        $query = "SELECT nom FROM images WHERE nom = :filename and id_annonce = :id_annonce";   
+        
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':filename' => $filename, ':id_annonce' => $id_annonce]);
+
+        return $stmt;
+    }
+    public function insert_image($filename, $id_annonce)
+    {
+        $pdo = $this->pdo;
+
+        $query = "INSERT INTO images(nom, id_annonce) VALUES(:filename, :id_annonce)";   
+        
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':filename' => $filename, ':id_annonce' => $id_annonce]);
+
+        return $stmt;
+    }
+
+    public function get_id_annonce_recent($id_membre)
+    {   
+        $pdo = $this->pdo;
+
+        $query = "SELECT * FROM annonce WHERE membre_id = :id_membre ORDER BY  id DESC";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':id_membre' => $id_membre]);
+        $ligne = $stmt->fetch(PDO::FETCH_OBJ);
+
+        return $ligne;
+    }
+    public function get_id_image()
+    {   
+        $pdo = $this->pdo;
+
+        $query = "SELECT * FROM images ORDER BY  id_annonce DESC";
+
+        $stmt = $pdo->query($query);
+        $ligne = $stmt->fetch(PDO::FETCH_OBJ);
+
+        return $ligne;
+    }
+
+    public function add_id_image_annonce($id_annonce, $id_image)
+    {
+        $pdo = $this->pdo;
+
+        $query = "UPDATE annonce SET id_images = $id_image  WHERE id = $id_annonce";
+
+        $stmt = $pdo->query($query);
+
+        return $stmt;
+    }
+    public function get_all_image_by_id_annonce($id_annonce)
+    {   
+        $pdo = $this->pdo;
+
+        $query = "SELECT nom FROM images WHERE  id_annonce = :id_annonce";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':id_annonce' => $id_annonce]);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $results;
     }
 
     public function delete_annonce(AnnonceEntity $reservation):void

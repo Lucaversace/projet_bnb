@@ -17,7 +17,7 @@ class ConnexionDb
 
         try 
         {
-            $this->pdo = new PDO("mysql:host=localhost:8889;dbname=projet_bnb", $this->user, $this->pass);
+            $this->pdo = new PDO("mysql:host=localhost:3300;dbname=projet_bnb", $this->user, $this->pass);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         } 
         catch (PDOException $e) 

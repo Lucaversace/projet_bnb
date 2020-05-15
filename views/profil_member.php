@@ -1,17 +1,29 @@
 <?php
 
+use App\Model\AnnonceEntity;
+use App\Service\AnnonceService;
+use App\Model\MembreEntity;
+use App\Service\MembreService;
+
 require_once "../views/layout/header.php";
 require_once "../views/layout/footer.php";
 
-$title = "membre";
+
+if (isset($_GET['id'])) 
+{
+	$id_membre = $_GET['id'];
+
+	$membreService = new MembreService();
+	$membreResult = $membreService->get_membre_by_id($id_membre);
+	$membre = new MembreEntity($membreResult);
+
+	$annonceService  = new AnnonceService();
+	$resultsAnnonce = $annonceService->get_annonce_by_id_membre($id_membre);
+}
+$title = "Profil de " . $membre->membre_prenom;
 ?>
 
 <?php ob_start();?>
-
-<h1>Profil Membre</h1>
-
-
-<?php $content = ob_get_clean();?>
 
 <div class="container-fluid">
     <div class="row Membre">
@@ -19,13 +31,13 @@ $title = "membre";
 			<div class="Membre-menu d-flex flex-column justify-content-center">
 				<!-- MENU -->
 				<div class="Membre-img d-flex justify-content-center">
-					<img src="img/desktop/profildesktop.png" class="img-responsive" alt="">
+					<img src="img/desktop/profildesktop.png" id="img-profil" class="img-responsive" alt="">
 				</div>
 				<!-- FIN MENU-->
 				<!-- TITRE -->
 				<div class="Membre-titre">
 					<div class="Membre-titre-nom">
-						John Smith
+					<?php echo ucfirst($membre->membre_prenom); ?> <?php echo ucfirst($membre->membre_nom) ?>
 					</div>
 					<div class="Membre-titre-pays">
 						France
@@ -47,15 +59,18 @@ $title = "membre";
 		</div>
 		<div class="col-md-9">
             <div class="Membre-centre">
-			   <h2>BONJOUR, JE M'APPELLE JOHN !</h2>
+			   <h2>Bonjour, je m'appelle <?= ucfirst($membre->membre_prenom) ?></h2>
 			   <p> Membre depuis 2020 </p>
 			   <p> Habite à Lyon, France </p>
 			   <hr></hr>
-			   <h6> Annonce de John : <h6>
-			   <div class="Membre-img d-flex justify-content-center">
-					<img src="img/desktop/annonce/ori4.png" class="img-responsive" alt="">
-					<img src="img/desktop/annonce/ori5.png" class="img-responsive" alt="">
-					<img src="img/desktop/annonce/ori7.png" class="img-responsive" alt="">
+			   <h6> Annonce<?php pluriels($resultsAnnonce);?> de <?= ucfirst($membre->membre_prenom) ?> : <h6>
+			   <div class="Membre-img d-flex justify-content-around flex-wrap">
+				   <?php foreach ($resultsAnnonce as $annonce) {
+					   ?>
+						<div class="col-4 mt-3">
+						<a href="/Annonce?id=<?= $annonce->id ?>"><img src="img/desktop/annonce/ori4.png" class="img-responsive img-annonce" alt=""></a>
+						</div>
+				   <?php }?>
 				</div>
 				
 			   </div>
@@ -81,10 +96,13 @@ body {
   box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
 }
 
-.Membre-img img {
+.img-annonce{
   margin: 0 auto;
-  width: 30%;
-  height: 30%;
+width: 100%;
+}
+#img-profil{
+	width: 50%;
+	height: 50%;
 }
 
 .Membre-titre {

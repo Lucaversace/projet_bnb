@@ -80,8 +80,8 @@ main
     <div class="form-group row">
       <label for="inputPassword" class="sr-only">Mot de passe</label>
       <input type="password" name="password" id="mdp" class="offset-md-5 col-md-2 form-control mb-4" placeholder="Mot de passe">
-    </div>
-
+    </div>  
+    <a href="/PasswordForget">Mot de passe oublié ?</a>
         <button class="mt-4 btn btn-lg btn-block form-group btn-success col-md-2 text-center mx-auto d-block" type="submit">Connexion</button>
   </form>
 </div>

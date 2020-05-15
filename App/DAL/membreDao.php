@@ -81,4 +81,39 @@ class membreDao extends AbstractDao
 
         return $stmt->rowCount();
     }
+    public function exist_user($email)
+    {
+        $pdo = $this->pdo;
+
+        $query = "SELECT * FROM membre WHERE email = :email ";
+
+        $stmt  = $pdo->prepare($query);
+        $stmt->execute([':email' => $email]);
+
+        return $stmt;
+    }
+
+    public function update_passwd($email, $passwd)
+    {
+        $pdo = $this->pdo;
+
+        $newpasswd = $passwd;
+        $query = "UPDATE membre SET mdp = :newpasswd WHERE email = :email";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':email' => $email, ':newpasswd' => $newpasswd]);
+
+        return $stmt;
+    }
+    public function update_solde($id_membre, $solde)
+    {
+        $pdo = $this->pdo;
+
+        $query = "UPDATE membre SET solde = :newsolde WHERE id = :idmembre";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':idmembre' => $id_membre, ':newsolde' => $solde]);
+
+        return $stmt;
+    }
 }

@@ -23,9 +23,11 @@ ob_start();
                 <li class="text-center nav-item">
                     <a <?php active_lien('/Accueil');?> class="nav-link" href="/Accueil">Accueil</a>
                 </li>
+                <?php if(isset($_SESSION['status'])){?>
                 <li class="text-center nav-item">
                     <a <?php active_lien('/Depot');?> class="nav-link " href="/Depot">Déposer une annonce</a>
                 </li>
+                <?php } ?>
                 <?php if(!isset($_SESSION['status'])){?>
                 <li class="text-center nav-item">
                     <a <?php active_lien('/Connexion');?> class="nav-link" href="/Connexion">Connexion</a>
@@ -55,7 +57,7 @@ ob_start();
                 </button>
                      <div class="dropdown-menu dropdown-menu-center" >
                          <a class="dropdown-item"  href="/Profil">Modifier mon profil</a>
-                         <a class="dropdown-item" href="/Membre">Voir mon Profil</a>
+                         <a class="dropdown-item" href="/Membre?id=<?= $_SESSION['utilisateur']->id_membre ?>">Voir mon Profil</a>
                          <a class="dropdown-item" href="/Deconnexion">Déconnexion</a>
                          <a class="dropdown-item disabled" href="">Solde : <?= $_SESSION['utilisateur']->membre_solde ?> €</a>
                     </div>  

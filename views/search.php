@@ -15,6 +15,7 @@ if (isset($_GET['lieu']) and isset($_GET['voyageur']))
 
     $annonceService = new annonceService();
     $results = $annonceService->get_search_annonce($voyageur, $lieu);
+
     if ($results == null) 
     {
       $oups = true;
@@ -48,12 +49,19 @@ else{?>
 
 <?php foreach($results as $annonceSql){
   $annonce = new AnnonceEntity($annonceSql);
+  $resultsImage = $annonceService->get_all_image_by_id_annonce($annonce->id_annonce);
+  foreach ($resultsImage as $image) 
+  {
+    $tab[] = $image['nom'];
+  }
   ?>
+ 
+  
 <a  id="annonce" href="Annonce?id=<?= $annonce->id_annonce?>">
 <div class="container-fluid annonce">
   <div  class="row mb-3 mt-5 ml-1 d-flex align-items-center " > 
           <div class="col-sm-3 mb-5 mt-5 ">
-            <img src="img/desktop/annonce/ori4.png" alt=""> 
+            <img src="/upload/<?= $tab[0] ?>" alt=""> 
         </div> 
         <div class="col-sm-3  mr-sm-2 ">
             <h3  class=""><?php echo($annonce->titre);?></h3>

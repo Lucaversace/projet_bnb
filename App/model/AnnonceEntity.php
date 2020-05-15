@@ -14,7 +14,6 @@ class AnnonceEntity
     public $description;
     public $nb_places;
     public $prix_personne;
-    public $url_photo;
     public $membre_id;
     public $ville;
     public $code_postale;
@@ -30,7 +29,6 @@ class AnnonceEntity
             $this->prix_personne = $resultSql->prix_personne;
             $this->nb_places = $resultSql->nb_places;
             $this->description = $resultSql->description;
-            $this->url_photo = $resultSql->url_photo;
             $this->membre_id = $resultSql->membre_id;
             $this->ville = $resultSql->ville;
             $this->code_postale = $resultSql->code_postale;

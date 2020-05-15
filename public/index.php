@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once "../App/functions.php";
 require_once "../vendor/autoload.php";
 use App\Controller\RouteController;
@@ -7,6 +7,7 @@ $sep = DIRECTORY_SEPARATOR;
 
 define('VIEWS', dirname(__DIR__). $sep . 'views/');
 define('UTILS', dirname(__DIR__). $sep . 'App/');
+define('UPLOADS', dirname(__DIR__). $sep . 'public/upload/');
 
 ?>
 
@@ -14,7 +15,7 @@ define('UTILS', dirname(__DIR__). $sep . 'App/');
 
 $routing = new RouteController();
 
-$path = array("Accueil", "Annonce", "Inscription", "Depot", "Connexion", "Recherche", "Membre", "Profil", "Deconnexion", "index.php");
+$path = array("Accueil", "Annonce", "Inscription", "Depot", "Connexion", "Recherche", "Membre", "Profil", "Deconnexion", "index.php","PasswordForget");
 
 foreach ($path as $key) 
 {
@@ -56,6 +57,9 @@ else
         break;
         case 'Profil':
             $routing->get_profil();
+        break;
+        case 'PasswordForget':
+            $routing->get_forget();
         break;
         case 'Deconnexion':
             $routing->util_logout();

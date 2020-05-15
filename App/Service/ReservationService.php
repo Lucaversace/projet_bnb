@@ -9,7 +9,9 @@ class ReservationService
     public function add_reservation(ReservationEntity $reservation)
     {
         $reservationDao = new reservationDao();
-        $reservationDao->add_reservation($reservation);
+        $stmt = $reservationDao->add_reservation($reservation);
+        return $stmt;
+
     }
 
     public function get_reservation(ReservationEntity $reservation)
@@ -17,5 +19,11 @@ class ReservationService
         $reservationDao = new reservationDao();
         $ligne = $reservationDao->get_reservation($reservation);
         return $ligne;
+    }
+    public function get_all_reservation_by_id($id_annonce)
+    {
+        $annonceDao = new ReservationDao();
+        $results = $annonceDao->get_all_reservation_by_id($id_annonce);
+        return $results;
     }
 }

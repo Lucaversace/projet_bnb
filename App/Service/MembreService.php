@@ -32,4 +32,22 @@ class MembreService
         $stmt = $membredao->update_user($id,$email,$mdp,$solde);
         return $stmt;
     }
+    public function exist_user($email)
+    {
+        $membredao = new MembreDao();
+        $stmt = $membredao->exist_user($email);
+        return $stmt;
+    }
+    public function update_passwd($email, $passwd)
+    {
+        $membredao = new MembreDao();
+        $stmt = $membredao->update_passwd($email, $passwd);
+        return $stmt;
+    }
+    public function update_solde($id_membre, $solde)
+    {
+        $membredao = new MembreDao();
+        $stmt = $membredao->update_solde($id_membre, $solde);
+        return $stmt;
+    }
 }
