@@ -32,9 +32,28 @@ elseif(isset($_POST['user']) && empty($_POST['user']) && isset($_POST['newpasswd
 <?php ob_start();?>
 
 <style>
+#fondimg{
+z-index: 1;
+}
+#formpasswd{
+z-index: 2;
+position:absolute;
+top:12vw;
+background-color: white;
+display: flex;
+flex-direction: column;
+border-radius: 0.8vw;
+left: 30%;
+}
+#fondimg img{
+    width: 100%;
+    height: 800px;
+}
 
 </style>
-
+<div id="fondimg"> 
+<img src="img/desktop/fondinscri.png" alt="">
+</div>
 <?php if(isset($error_empty) && $error_empty){?>
 <div class="alert alert-danger">Tous les champs sont obligatoires.</div>
 <?php }?>
@@ -42,22 +61,22 @@ elseif(isset($_POST['user']) && empty($_POST['user']) && isset($_POST['newpasswd
 <div class="alert alert-danger">Les champs sont invalides.</div>
 <?php }?>
 
+
+<div class="p-5 " id="formpasswd">
 <h1>Changer votre mot de passe</h1>
 
 
-</figure>
-
-<form id="form-forget" method="POST">
+<form class="d-flex flex-column p-5" id="form-forget" method="POST">
 <label for="">Votre adresse mail</label>
 <input name="user" type="text">
 <label for="">Nouveau mot de passe</label>
 <input name="newpasswd" type="password">
 <label for="">Confirmer le mot de passe</label>
 <input name="confirmpasswd" type="password">
-
+</br>
 <button class="btn btn-primary">Changer mot de passe</button>
 </form>
-
+</div>
 <?php $content = ob_get_clean();?>
 
 <?php 
