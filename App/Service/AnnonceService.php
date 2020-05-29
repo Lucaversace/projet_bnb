@@ -75,4 +75,10 @@ class AnnonceService
         $results = $annonceDao->get_first_image_by_id_annonce($id_annonce);
         return $results;
     }
+    public function delete_annonce_by_id($id_annonce)
+    {
+        $annonceDao = new AnnonceDao();
+        $stmt = $annonceDao->delete_annonce_by_id($id_annonce);
+        return $stmt;
+    }
 }

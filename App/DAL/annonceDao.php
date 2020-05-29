@@ -187,9 +187,16 @@ class AnnonceDao extends AbstractDao
         return $results;
     }
 
-    public function delete_annonce(AnnonceEntity $reservation):void
+    public function delete_annonce_by_id($id_annonce)
     {
+        $pdo = $this->pdo;
 
+        $query = "DELETE FROM annonce WHERE id = :id_annonce";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':id_annonce' => $id_annonce]);
+
+        return $stmt;
     }
 
     public function update_annonce(AnnonceEntity $reservation):void

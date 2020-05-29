@@ -15,7 +15,7 @@ define('UPLOADS', dirname(__DIR__). $sep . 'public/upload/');
 
 $routing = new RouteController();
 
-$path = array("Accueil", "Annonce", "Inscription", "Depot", "Connexion", "Recherche", "Membre", "Profil", "Deconnexion", "index.php","PasswordForget");
+$path = array("Accueil", "Annonce", "Inscription", "Depot", "Connexion", "Recherche", "Membre", "Profil", "Deconnexion", "index.php","PasswordForget", "Supprimer");
 
 foreach ($path as $key) 
 {
@@ -60,6 +60,9 @@ else
         break;
         case 'PasswordForget':
             $routing->get_forget();
+        break;
+        case 'Supprimer':
+            $routing->delete_annonce();
         break;
         case 'Deconnexion':
             $routing->util_logout();

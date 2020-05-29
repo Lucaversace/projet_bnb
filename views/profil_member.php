@@ -78,6 +78,9 @@ $title = "Profil de " . $membre->membre_prenom;
 						<div class="annonce p-3 col-4 mt-3">
 						<a href="/Annonce?id=<?= $annonce->id ?>"><img src="/upload/<?= $tab[0] ?>" class="img-responsive img-annonce" alt=""></a>
 						<div ><?= $annonce->titre ?></div>
+						<?php if ($id_membre == $_SESSION['utilisateur']->id_membre){?>
+						<a href="/Supprimer?id=<?= $annonce->id ?>&idmembre=<?= $id_membre ?>">Supprimer</a>
+						<?php } ?>
 						</div>
 						
 				<?php }?>

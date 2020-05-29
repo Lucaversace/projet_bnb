@@ -53,5 +53,9 @@ class RouteController extends Controller
     {
         $this->view('forgetpasswd');
     }
+    public function delete_annonce()
+    {
+        $this->utils('supprimer_annonce');
+    }
 }
 
